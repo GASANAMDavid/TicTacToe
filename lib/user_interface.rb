@@ -3,5 +3,4 @@ module UserInterface
     output.puts "\n\n  Instructions\n::::::::::::::::\n\n"
     output.puts " 1. Players choose a symbol to use throught the game.\n"
   end
-  display_instructions
 end

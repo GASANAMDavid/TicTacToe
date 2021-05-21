@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
-          command: bundle 2.2.16
+          command: gem install bundler
       #     name: Configure Bundler
       #     command: |
       #       echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV

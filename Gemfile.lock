@@ -41,6 +41,7 @@ PLATFORMS
   universal-darwin-20
 
 DEPENDENCIES
+  bundler (~> 2.2.16)
   rake
   rspec (~> 3.4)
   rubocop

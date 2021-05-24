@@ -1,4 +1,7 @@
 module UserInterface
+  output = $stdout
+  input = $stdin
+
   def self.display_instructions(output = $stdout)
     output.puts "\n\n  Instructions\n::::::::::::::::\n\n"
     output.puts " 1. Players choose a unique symbol to use as a mark throught the game.\n"
@@ -13,6 +16,6 @@ module UserInterface
     name = input.gets.chomp
     output.puts "Enter player's symbol."
     symbol = input.gets.chomp
-    { name => symbol }
+    [name, symbol]
   end
 end

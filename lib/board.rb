@@ -18,7 +18,6 @@ class Board
     board[position[0]][position[1]] = symbol
     @num_of_blank_spaces -= 1
     blank_positions.delete(blank_positions.key(position))
-    nil
   end
 
   def make_free_positions_hash(blanks)

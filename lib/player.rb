@@ -1,13 +1,8 @@
 class Player
-  attr_reader :name, :mark, :id, :curr_board
+  attr_reader :name, :symbol
 
-  @@ID = 1
-
-  def initialize(name, mark, curr_board)
+  def initialize(name, symbol)
     @name = name
-    @mark = mark
-    @id = @@ID
-    @curr_board = curr_board
-    @@ID += 1
+    @symbol = symbol
   end
 end

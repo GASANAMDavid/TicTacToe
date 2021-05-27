@@ -21,7 +21,7 @@ RSpec.describe GameEngine do
     end
   end
 
-  context '.switch_payers' do
+  context '#switch_payers' do
     it 'receives current_player and switches to another player' do
       expect(subject.switch_players(player1)).to eq(player2)
     end

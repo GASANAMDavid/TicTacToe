@@ -1,8 +1,5 @@
-module UserInterface
-  output = $stdout
-  input = $stdin
-
-  def self.display_instructions(output = $stdout)
+class UserInterface
+  def display_instructions(output = $stdout)
     output.puts "\n\n  Instructions\n::::::::::::::::\n\n"
     output.puts " 1. Players choose a unique symbol to use as a mark throught the game.\n"
     output.puts " 2. The game is played on a grid of 3 by 3.\n"
@@ -11,11 +8,28 @@ module UserInterface
     output.puts " 5. If all 9 squares are full and there is no winner the game is TIED and Over.\n\n"
   end
 
-  def self.player_symbols(output, input)
+  def player_symbols(output = $stdout, input = $stdin)
     output.puts "Enter player's name."
     name = input.gets.chomp
     output.puts "Enter player's symbol."
     symbol = input.gets.chomp
-    [name, symbol]
+    { name: name, symbol: symbol }
+  end
+
+  def see_board(board, output = $stdout)
+    board.each do |row|
+      output.puts row.to_s
+    end
+  end
+
+  def see_available_free_position(free_spaces, output = $stdout)
+    free_spaces.each do |key, value|
+      output.puts "position number: #{key} indices: #{value}"
+    end
+  end
+
+  def get_players_move(output = $stdout, input = $stdin)
+    output.puts 'Enter your choice'
+    input.gets.chomp.to_i
   end
 end

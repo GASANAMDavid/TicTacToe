@@ -1,8 +1,8 @@
 class GameEngine
-  attr_reader :board, :player1, :player2
+  attr_reader :playing_board, :player1, :player2
 
   def initialize(board, player1, player2)
-    @board = board
+    @playing_board = board
     @player1 = player1
     @player2 = player2
   end
@@ -11,7 +11,7 @@ class GameEngine
     current_player = player1
     loop do
       puts "#{current_player.name}'s turn"
-      current_player.make_move(board)
+      current_player.make_move(playing_board)
       return find_board_status(current_player) unless find_board_status(current_player).nil?
 
       current_player = switch_players(current_player)
@@ -29,7 +29,7 @@ class GameEngine
   end
 
   def find_board_status(current_player)
-    case board.game_state
+    case playing_board.game_state
     when 'Tie'
       "It's a Draw"
     when 'Winner'

@@ -15,7 +15,7 @@ class Board
   end
 
   def apply_move(symbol, position)
-    board[position[0]][position[1]] = symbol
+    board[position[:row]][position[:col]] = symbol
     @num_of_blank_spaces -= 1
     blank_positions.delete(blank_positions.key(position))
   end
@@ -23,7 +23,7 @@ class Board
   def make_free_positions_hash(blanks)
     hash = {}
     (0...blanks.length).each do |i|
-      hash[i + 1] = blanks[i]
+      hash[i + 1] = { row: blanks[i][0], col: blanks[i][1] }
     end
     hash
   end

@@ -5,25 +5,39 @@ RSpec.describe GameEngine do
   let(:player1) { double('player') }
   let(:player2) { double('player') }
   let(:subject) { GameEngine.new(board, player1, player2) }
+
   context '#play' do
+    before do
+      allow(player1).to receive(:name).and_return("N'Golo")
+      allow(player1).to receive(:make_move).with(board).and_return(1)
+      allow(player1).to receive(:symbol).and_return('X')
+      allow(board).to receive(:apply_move).with('X', 1)
+    end
+
     it 'returns Tie if the state of the game is TIED ' do
-      allow(board).to receive(:game_state).with(no_args).and_return('Tie')
-      allow(player1).to receive(:make_move)
-      allow(player1).to receive(:name).and_return('Bob')
+      allow(board).to receive(:board_state).with(no_args).and_return('Tie')
+      expect(subject).to receive(:find_board_status).with(player1).and_return("It's a Draw").at_least(:twice)
       expect(subject.play).to eq("It's a Draw")
     end
 
     it 'returns current player as winner if the state of the game is Winner ' do
-      allow(board).to receive(:game_state).with(no_args).and_return('Winner')
-      allow(player1).to receive(:make_move)
-      allow(player1).to receive(:name).and_return('Mason').with(no_args).at_least(3).times
-      expect(subject.play).to eq('Mason won the game')
+      allow(board).to receive(:board_state).with(no_args).and_return('Winner')
+      expect(subject).to receive(:find_board_status).with(player1).and_return("N'Golo won the game").at_least(:twice)
+      expect(subject.play).to eq("N'Golo won the game")
     end
-  end
-
-  context '#switch_payers' do
-    it 'receives current_player and switches to another player' do
-      expect(subject.switch_players(player1)).to eq(player2)
+    context 'testing loop' do
+      it 'allows players to take turns when the game is not finished' do
+        allow(board).to receive(:board_state).with(no_args).and_return(nil)
+        expect(subject).to receive(:find_board_status).with(player1).and_return(nil)
+        expect(subject).to receive(:switch_players).with(player1).and_return(player2)
+        allow(player2).to receive(:name).and_return('Kante')
+        allow(player2).to receive(:make_move).with(board).and_return(2)
+        allow(player2).to receive(:symbol).and_return('O')
+        allow(board).to receive(:apply_move).with('O', 2)
+        allow(board).to receive(:board_state).with(no_args).and_return('Winner')
+        expect(subject).to receive(:find_board_status).with(player2).and_return('Kante won the game').at_least(:twice)
+        expect(subject.play).to eq('Kante won the game')
+      end
     end
   end
 end

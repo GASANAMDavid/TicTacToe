@@ -21,7 +21,7 @@ class GameEngine
 
       playing_board.apply_move(current_player.symbol, move)
 
-      game_status = GameStatus.find_board_status(current_player, playing_board)
+      game_status = GameStatus.find_game_status(current_player, playing_board)
 
       unless game_status.nil?
         UserInterface.display_game_outcome(game_status)

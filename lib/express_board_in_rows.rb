@@ -1,5 +1,5 @@
-module BoardasRows
-  def self.express_board_as_rows(board)
+module BoardAsRows
+  def express_board_as_rows(board)
     all_as_rows = []
     board.each do |row|
       all_as_rows << row

@@ -1,8 +1,7 @@
 require_relative 'express_board_in_rows'
 
 class Board
-  include BoardasRows
-
+  include BoardAsRows
   DENOTE_EMPTY = '-'
   attr_reader :board, :num_of_played_positions, :blank_positions
 
@@ -29,7 +28,7 @@ class Board
   def board_state(symbol)
     return nil if num_of_played_positions < board.size * 2 - 1
 
-    check_rows = BoardasRows.express_board_as_rows(board)
+    check_rows = express_board_as_rows(board)
 
     if check_rows.any? { |row| check_uniqueness(row, symbol) }
       'Winner'

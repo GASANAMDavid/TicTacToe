@@ -1,16 +1,19 @@
 require_relative 'user_interface'
+require_relative 'game_status'
+require 'stringio'
+# GameEngine acts as an engine for TIC TOE TOE to allow players to play the game by taking turns.
 class GameEngine
   include UserInterface
-  attr_reader :playing_board, :player1, :player2
+  attr_reader :playing_board, :first_player, :second_player
 
-  def initialize(board, player1, player2)
+  def initialize(board, first_player, second_player)
     @playing_board = board
-    @player1 = player1
-    @player2 = player2
+    @first_player = first_player
+    @second_player = second_player
   end
 
   def play
-    current_player = player1
+    current_player = first_player
     loop do
       UserInterface.display_which_player_turn(current_player)
       move = current_player.make_move(playing_board)
@@ -18,28 +21,24 @@ class GameEngine
 
       playing_board.apply_move(current_player.symbol, move)
 
-      return find_board_status(current_player) unless find_board_status(current_player).nil?
+      game_status = GameStatus.find_board_status(current_player, playing_board)
+
+      unless game_status.nil?
+        UserInterface.display_game_outcome(game_status)
+        break
+      end
 
       current_player = switch_players(current_player)
-    end
-  end
-
-  def find_board_status(current_player)
-    case playing_board.board_state(current_player.symbol)
-    when 'Tie'
-      "It's a Draw"
-    when 'Winner'
-      "#{current_player.name} won the game"
     end
   end
 
   private
 
   def switch_players(current_player)
-    if current_player == player1
-      player2
+    if current_player == first_player
+      second_player
     else
-      player1
+      first_player
     end
   end
 end

@@ -2,7 +2,6 @@ require_relative '../lib/board'
 require_relative '../lib/player'
 
 RSpec.describe Player do
-  let(:board) { Board.new(3) }
   let(:player) { Player.new('Bob', 'X') }
   it 'initializes a player with name and symbol' do
     expect(player.name).to eq('Bob')

@@ -9,14 +9,17 @@ RSpec.describe HumanPlayer do
   let(:playing_board) { double }
 
   context '#make_move' do
+    before do
+      UserInterface.output = output
+      UserInterface.input = input
+    end
+
     it "receives and return player's move" do
-      subject.output = output
-      subject.input = input
-      allow(UserInterface).to receive(:see_board).with([['-', '-', '-']], output)
-      allow(UserInterface).to receive(:get_players_move).with(output, input).and_return(1)
+      allow(UserInterface).to receive(:see_board).with([['-', '-', '-']])
+      allow(UserInterface).to receive(:get_players_move).and_return(1)
       allow(playing_board).to receive(:free_spaces).and_return({})
       allow(playing_board).to receive(:board).and_return([['-', '-', '-']])
-      subject.make_move(playing_board)
+      expect(subject.make_move(playing_board)).to eq(1)
     end
   end
 end

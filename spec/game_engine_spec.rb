@@ -15,27 +15,22 @@ RSpec.describe GameEngine do
     end
 
     it 'returns Tie if the state of the game is TIED ' do
-      allow(board).to receive(:board_state).with(no_args).and_return('Tie')
-      expect(subject).to receive(:find_board_status).with(player1).and_return("It's a Draw").at_least(:twice)
+      allow(board).to receive(:board_state).with('X').and_return('Tie')
       expect(subject.play).to eq("It's a Draw")
     end
 
     it 'returns current player as winner if the state of the game is Winner ' do
-      allow(board).to receive(:board_state).with(no_args).and_return('Winner')
-      expect(subject).to receive(:find_board_status).with(player1).and_return("N'Golo won the game").at_least(:twice)
+      allow(board).to receive(:board_state).with('X').and_return('Winner')
       expect(subject.play).to eq("N'Golo won the game")
     end
     context 'testing loop' do
       it 'allows players to take turns when the game is not finished' do
-        allow(board).to receive(:board_state).with(no_args).and_return(nil)
-        expect(subject).to receive(:find_board_status).with(player1).and_return(nil)
-        expect(subject).to receive(:switch_players).with(player1).and_return(player2)
+        allow(board).to receive(:board_state).with('X').and_return(nil)
         allow(player2).to receive(:name).and_return('Kante')
         allow(player2).to receive(:make_move).with(board).and_return(2)
         allow(player2).to receive(:symbol).and_return('O')
         allow(board).to receive(:apply_move).with('O', 2)
-        allow(board).to receive(:board_state).with(no_args).and_return('Winner')
-        expect(subject).to receive(:find_board_status).with(player2).and_return('Kante won the game').at_least(:twice)
+        allow(board).to receive(:board_state).with('O').and_return('Winner')
         expect(subject.play).to eq('Kante won the game')
       end
     end

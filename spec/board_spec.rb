@@ -8,20 +8,30 @@ RSpec.describe Board do
     expect(player_board.board).to eq([%w[- - -], %w[- - -], %w[- - -]])
   end
 
-  it 'expects number of blank spaces to be 9' do
-    expect(player_board.num_of_blank_spaces).to eq 9
-  end
-
-  it 'creates a hash from array of arrays' do
-    expect(player_board.make_free_positions_hash([[1, 2]])).to eq({ 1 => { row: 1, col: 2 } })
-  end
-  it 'prints the board' do
-    player_board.print_board(output)
-    expect(output.string).to include("[\"-\", \"-\", \"-\"]\n")
-  end
-
   it "adds the player's symbol to the board's specified index " do
     player_board.apply_move('X', { row: 0, col: 0 })
     expect(player_board.board).to eq([%w[X - -], %w[- - -], %w[- - -]])
+  end
+  describe '#board_state' do
+    context 'when the game is won' do
+      [
+        [[{ row: 1, col: 2 }, { row: 1, col: 1 }, { row: 1, col: 0 }, { row: 0, col: 0 }, { row: 0, col: 1 }], 'O',
+         'ROW_WISE'],
+        [[{ row: 0, col: 0 }, { row: 1, col: 0 }, { row: 2, col: 0 }, { row: 1, col: 2 }, { row: 1, col: 1 }], 'X',
+         'COLUMN_WISE'],
+        [[{ row: 0, col: 0 }, { row: 1, col: 1 }, { row: 2, col: 2 }, { row: 1, col: 2 }, { row: 1, col: 0 }], 'O',
+         'MAIN_DIAGONAL_WISE'],
+        [[{ row: 0, col: 2 }, { row: 1, col: 1 }, { row: 2, col: 0 }, { row: 0, col: 0 }, { row: 2, col: 2 }], 'X',
+         'COUNTER_DIAGONAL_WISE']
+      ].each do |moves, symbol, description|
+        it "should return 'Winner' if player has won (#{description})" do
+          moves.each do |move|
+            player_board.apply_move(symbol, move)
+          end
+
+          expect(player_board.board_state(symbol)).to eq 'Winner'
+        end
+      end
+    end
   end
 end

@@ -8,12 +8,6 @@ class Board
     @blank_positions = make_free_positions_hash(size.times.to_a.product(size.times.to_a))
   end
 
-  def print_board(output = $stdout)
-    board.each do |i|
-      output.puts i.to_s
-    end
-  end
-
   def apply_move(symbol, position)
     board[position[:row]][position[:col]] = symbol
     @num_of_blank_spaces -= 1

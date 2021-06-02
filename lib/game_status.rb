@@ -1,5 +1,5 @@
 module GameStatus
-  def self.find_game_status(current_player, playing_board)
+  def self.find(current_player, playing_board)
     case playing_board.board_state(current_player.symbol)
     when 'Tie'
       "It's a Draw"

@@ -33,5 +33,39 @@ RSpec.describe Board do
         end
       end
     end
+
+    context 'when the game is Tied' do
+      [
+        [[{ row: 0, col: 0 }, { row: 1, col: 2 }, { row: 1, col: 0 }, { row: 0, col: 2 }, { row: 2, col: 1 }], 'X',
+         [{ row: 1, col: 1 }, { row: 0, col: 1 }, { row: 2, col: 0 }, { row: 2, col: 2 }], 'O']
+      ].each do |first_player_moves, first_player_symbol, second_player_moves, second_player_symbol|
+        it 'returns Tie' do
+          first_player_moves.each do |move|
+            player_board.apply_move(first_player_symbol, move)
+          end
+          second_player_moves.each do |move|
+            player_board.apply_move(second_player_symbol, move)
+          end
+          expect(player_board.board_state(first_player_symbol)).to eq 'Tie'
+        end
+      end
+    end
+
+    context 'unfinished game' do
+      [
+        [[{ row: 0, col: 0 }, { row: 1, col: 2 }, { row: 1, col: 0 }, { row: 0, col: 2 }], 'X',
+         [{ row: 1, col: 1 }, { row: 0, col: 1 }, { row: 2, col: 0 }], 'O']
+      ].each do |first_player_moves, first_player_symbol, second_player_moves, second_player_symbol|
+        it 'returns nil indicating that the game continues' do
+          first_player_moves.each do |move|
+            player_board.apply_move(first_player_symbol, move)
+          end
+          second_player_moves.each do |move|
+            player_board.apply_move(second_player_symbol, move)
+          end
+          expect(player_board.board_state(first_player_symbol)).to eq nil
+        end
+      end
+    end
   end
 end

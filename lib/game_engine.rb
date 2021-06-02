@@ -35,10 +35,6 @@ class GameEngine
   private
 
   def switch_players(current_player)
-    if current_player == first_player
-      second_player
-    else
-      first_player
-    end
+    current_player == first_player ? second_player : first_player
   end
 end

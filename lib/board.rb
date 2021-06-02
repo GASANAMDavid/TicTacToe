@@ -8,13 +8,8 @@ class Board
   def initialize(size)
     @board = Array.new(size) { Array.new(size) { DENOTE_EMPTY } }
     @num_of_played_positions = 0
-    @blank_positions = make_blank_positions_hash(size.times.to_a.product(size.times.to_a))
-  end
-
-  def print_board(output = $stdout)
-    board.each do |i|
-      output.puts i.to_s
-    end
+    @range_to_board_size = size.times.to_a
+    @blank_positions = make_blank_positions_hash(@range_to_board_size.product(@range_to_board_size))
   end
 
   def apply_move(symbol, position)
@@ -32,7 +27,9 @@ class Board
   end
 
   def board_state(symbol)
-    return nil if num_of_played_positions < board.size * 2 - 1
+    board_size = board.size
+    minimun_plays_to_win = num_of_played_positions < board_size - 1
+    return nil if minimun_plays_to_win
 
     check_rows = express_board_as_rows(board)
 

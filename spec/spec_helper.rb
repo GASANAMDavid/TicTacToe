@@ -45,22 +45,6 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
-  # suppressing outputs during tests
-
-  # config.before(:all) do
-  #   $origin_stdout = $stdout
-  #   $origin_stderr = $stderr
-  #   $stdout = StringIO.new
-  #   $stderr = StringIO.new
-  # end
-
-  # config.after(:all) do
-  #   $stdout = $origin_stdout
-  #   $stderr = $origin_stderr
-  #   $origin_stdout = nil
-  #   $origin_stderr = nil
-  # end
-
   # The settings below are suggested to provide a good initial experience
   # with RSpec, but feel free to customize to your heart's content.
   #   # This allows you to limit a spec run to individual examples or groups

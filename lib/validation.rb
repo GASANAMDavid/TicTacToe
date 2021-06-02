@@ -1,6 +1,6 @@
 module Validation
   def validate_move(board, move)
-    free_spaces = board.free_spaces
-    free_spaces.key?(move)
+    blank_spaces = board.blank_positions
+    blank_spaces.key?(move)
   end
 end

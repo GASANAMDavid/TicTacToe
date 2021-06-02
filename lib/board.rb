@@ -27,12 +27,7 @@ class Board
 
   def board_state(symbol)
     board_size = board.size
-<<<<<<< HEAD
     return nil if more_than_minimun_plays_to_win?(board_size)
-=======
-    minimun_plays_to_win = num_of_played_positions < board_size - 1
-    return nil if minimun_plays_to_win
->>>>>>> 5fbd8db67c30a860f9e237172e7fd1152cb36f01
 
     check_rows = express_board_as_rows(board)
 
@@ -48,12 +43,9 @@ class Board
   def win?(row, mark)
     row.uniq.count == 1 && row[0] == mark
   end
-<<<<<<< HEAD
 
   def more_than_minimun_plays_to_win?(board_size)
     minimun_plays_to_win = board_size * 2 - 1
     num_of_played_positions < minimun_plays_to_win
   end
-=======
->>>>>>> 5fbd8db67c30a860f9e237172e7fd1152cb36f01
 end

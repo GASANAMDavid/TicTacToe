@@ -26,7 +26,9 @@ class Board
   end
 
   def board_state(symbol)
-    return nil if num_of_played_positions < board.size * 2 - 1
+    board_size = board.size
+    minimun_plays_to_win = num_of_played_positions < board_size - 1
+    return nil if minimun_plays_to_win
 
     check_rows = express_board_as_rows(board)
 

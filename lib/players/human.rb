@@ -1,6 +1,6 @@
 require_relative 'player'
-require_relative 'user_interface'
-require_relative 'validation'
+require_relative '../user_interface'
+require_relative '../validation'
 
 class HumanPlayer < Player
   include Validation

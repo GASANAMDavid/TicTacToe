@@ -1,5 +1,5 @@
-require_relative '../lib/human_player'
-require_relative '../lib/user_interface'
+require_relative '../../lib/players/human'
+require_relative '../../lib/user_interface'
 require 'stringio'
 
 RSpec.describe HumanPlayer do

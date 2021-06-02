@@ -1,5 +1,4 @@
-require_relative '../lib/board'
-require_relative '../lib/player'
+require_relative '../../lib/players/player'
 
 RSpec.describe Player do
   let(:player) { Player.new('Bob', 'X') }

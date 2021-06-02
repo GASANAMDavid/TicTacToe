@@ -36,7 +36,7 @@ class Board
 
     check_rows = express_board_as_rows(board)
 
-    if check_rows.any? { |row| check_uniqueness(row, symbol) }
+    if check_rows.any? { |row| win?(row, symbol) }
       'Winner'
     elsif num_of_played_positions == board_size * board_size
       'Tie'
@@ -45,7 +45,7 @@ class Board
 
   private
 
-  def check_uniqueness(row, mark)
+  def win?(row, mark)
     row.uniq.count == 1 && row[0] == mark
   end
 end

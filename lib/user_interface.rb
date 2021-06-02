@@ -10,6 +10,7 @@ module UserInterface
     output.puts " 3. Players take turns putting their marks into empty squares.\n"
     output.puts " 4. The first player to put 3 symbols in a any of 3 rows and 3 columns or any of the diagnols is the WINNER.\n"
     output.puts " 5. If all 9 squares are full and there is no winner the game is TIED and Over.\n\n"
+    output.puts ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n\n"
   end
 
   def self.player_info
@@ -43,5 +44,11 @@ module UserInterface
 
   def self.display_game_outcome(game_status)
     output.puts game_status
+  end
+
+  def display_game_modes
+    output.puts "\t\tGame Modes\n~~~~~~~~~~~~~\n\n"
+    output.puts "1. Human Vs Human\n"
+    output.puts '2. Human Vs Computer'
   end
 end

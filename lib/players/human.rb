@@ -2,7 +2,7 @@ require_relative 'player'
 require_relative '../user_interface'
 require_relative '../validation'
 
-class HumanPlayer < Player
+class Human < Player
   include Validation
   include UserInterface
 

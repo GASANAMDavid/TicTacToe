@@ -5,7 +5,7 @@ require 'stringio'
 RSpec.describe HumanPlayer do
   let(:output) { StringIO.new }
   let(:input) { StringIO.new("1\n") }
-  let(:subject) { HumanPlayer.new('Mason', 'Z') { include UserInterface } }
+  let(:subject) { Human.new('Mason', 'Z') { include UserInterface } }
   let(:playing_board) { double }
 
   context '#make_move' do

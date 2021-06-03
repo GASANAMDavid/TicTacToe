@@ -1,4 +1,6 @@
 require_relative '../lib/players/human'
+require_relative '../lib/players/random_computer'
+require_relative '../lib/board'
 module Interface
   class << self; attr_accessor :output, :input end
   self.output = $stdout
@@ -18,7 +20,7 @@ module Interface
   def self.choose_mode
     output.puts "\t\tGame Modes\n\t\t~~~~~~~~~~\n\n"
     output.puts "\t1. Human Vs Human\n"
-    output.puts "\t2. Human Vs Dummy Computer\n"
+    output.puts "\t2. Human Vs Random Computer\n"
     output.puts "\t3. Human Vs Intelligent Computer\n"
     output.puts "\t4. Intelligent Vs Intelligent Computer\n"
 
@@ -26,11 +28,21 @@ module Interface
     input.gets.chomp.to_i
   end
 
-  def self.player_info
-    output.puts "Enter player's name."
+  def self.make_board
+    output.puts 'Enter the board size'
+    size = input.gets.chomp.to_i
+    Board.new(size)
+  end
+
+  def self.human_player_info(order = '')
+    output.puts "Enter #{order} player's name."
     name = input.gets.chomp
-    output.puts "Enter player's symbol."
+    output.puts "Enter #{order} player's symbol."
     symbol = input.gets.chomp
-    { name: name, symbol: symbol }
+    Human.new(name, symbol)
+  end
+
+  def self.random_computer_info
+    RandomComputer.new('Random Computer', 'O')
   end
 end

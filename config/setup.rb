@@ -9,7 +9,7 @@ module GameSetUp
       second_player = Interface.human_player_info('Second')
       GameEngine.new(board, first_player, second_player)
     when 2
-      human_player = Interface.human_player_info
+      human_player = Interface.human_player_info('human')
       random_computer_player = Interface.random_computer_info
       GameEngine.new(board, human_player, random_computer_player)
     end

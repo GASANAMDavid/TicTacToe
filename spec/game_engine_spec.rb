@@ -12,9 +12,9 @@ RSpec.describe GameEngine do
   context '#play' do
     before do
       UserInterface.output = output
-      allow(player1).to receive(:name).and_return("N'Golo")
-      allow(player1).to receive(:make_move).with(board).and_return(1)
-      allow(player1).to receive(:symbol).and_return('X')
+      allow(player1).to receive(:name).and_return("N'Golo").at_most(3).times
+      allow(player1).to receive(:make_move).with(board).and_return(1, 4)
+      allow(player1).to receive(:symbol).and_return('X').at_most(4).times
       allow(board).to receive(:apply_move).with('X', 1)
     end
 
@@ -30,15 +30,28 @@ RSpec.describe GameEngine do
       expect(output.string).to include("N'Golo won the game")
     end
     context 'testing loop' do
-      it 'allows players to take turns when the game is not finished' do
-        allow(board).to receive(:board_state).with('X').and_return(nil)
-        allow(player2).to receive(:name).and_return('Kante')
-        allow(player2).to receive(:make_move).with(board).and_return(2)
-        allow(player2).to receive(:symbol).and_return('O')
+      before do
+        allow(board).to receive(:board_state).with('X').and_return(nil).at_most(3).times
+        allow(player2).to receive(:name).and_return('Kante').at_most(3).times
+        allow(player2).to receive(:make_move).with(board).and_return(2, 9)
+        allow(player2).to receive(:symbol).and_return('O').at_most(4).times
         allow(board).to receive(:apply_move).with('O', 2)
-        allow(board).to receive(:board_state).with('O').and_return('Winner')
-        subject.play
-        expect(output.string).to include('Kante won the game')
+      end
+      context 'loop 2 times' do
+        it 'allows players to take turns when the game is not finished' do
+          allow(board).to receive(:board_state).with('O').and_return('Winner')
+          subject.play
+          expect(output.string).to include('Kante won the game')
+        end
+      end
+      context 'loop 4 times' do
+        it 'allows players to take turns when the game is not finished' do
+          allow(board).to receive(:apply_move).with('X', 4)
+          allow(board).to receive(:apply_move).with('O', 9)
+          allow(board).to receive(:board_state).with('O').and_return(nil, 'Winner')
+          subject.play
+          expect(output.string).to include('Kante won the game')
+        end
       end
     end
   end

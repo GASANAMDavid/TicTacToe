@@ -11,7 +11,8 @@ class Board
     @blank_positions = make_blank_positions_hash(size.times.to_a.product(size.times.to_a))
   end
 
-  def apply_move(symbol, position)
+  def apply_move(symbol, move)
+    position = blank_positions[move]
     board[position[:row]][position[:col]] = symbol
     @num_of_played_positions += 1
     blank_positions.delete(blank_positions.key(position))

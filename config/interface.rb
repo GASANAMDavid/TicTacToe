@@ -34,7 +34,7 @@ module Interface
     Board.new(size)
   end
 
-  def self.human_player_info(order = '')
+  def self.human_player_info(order)
     output.puts "Enter #{order} player's name."
     name = input.gets.chomp
     output.puts "Enter #{order} player's symbol."

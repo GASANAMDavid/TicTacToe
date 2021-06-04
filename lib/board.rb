@@ -33,6 +33,7 @@ class Board
     (0...size).each do |row|
       (0...size).each do |col|
         hash[index] = { row: row, col: col } if board[row][col] == DENOTE_EMPTY
+        index += 1
       end
     end
     hash

@@ -3,7 +3,7 @@ require_relative 'express_board_in_rows'
 class Board
   include BoardAsRows
   DENOTE_EMPTY = '-'
-  attr_reader :board, :num_of_played_positions, :blank_positions
+  attr_reader :board, :num_of_played_positions
 
   def initialize(size)
     @board = Array.new(size) { Array.new(size) { DENOTE_EMPTY } }
@@ -22,6 +22,18 @@ class Board
     hash = {}
     (0...blanks.length).each do |i|
       hash[i + 1] = { row: blanks[i][0], col: blanks[i][1] }
+    end
+    hash
+  end
+
+  def blank_positions
+    size = board.size
+    hash = {}
+    index = 1
+    (0...size).each do |row|
+      (0...size).each do |col|
+        hash[index] = { row: row, col: col } if board[row][col] == DENOTE_EMPTY
+      end
     end
     hash
   end

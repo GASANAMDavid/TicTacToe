@@ -2,7 +2,7 @@ require_relative '../../lib/players/human'
 require_relative '../../lib/user_interface'
 require 'stringio'
 
-RSpec.describe HumanPlayer do
+RSpec.describe Human do
   let(:output) { StringIO.new }
   let(:input) { StringIO.new("1\n") }
   let(:subject) { Human.new('Mason', 'Z') { include UserInterface } }

@@ -39,23 +39,27 @@ class Board
     hash
   end
 
-  def board_state(symbol)
+  def board_state(player_symbol)
     board_size = board.size
     return nil if more_than_minimun_plays_to_win?(board_size)
 
     check_rows = express_board_as_rows(board)
 
-    if check_rows.any? { |row| win?(row, symbol) }
+    if check_rows.any? { |row| win?(row, player_symbol) }
       'Winner'
-    elsif num_of_played_positions == board_size * board_size
+    elsif (num_of_played_positions == board_size * board_size) && blank_positions.empty?
       'Tie'
     end
   end
 
+  def reset_move(move)
+    board[move[:row]][move[:col]] = DENOTE_EMPTY
+  end
+
   private
 
-  def win?(row, mark)
-    row.uniq.count == 1 && row[0] == mark
+  def win?(row, player_symbol)
+    row.uniq.count == 1 && row[0] == player_symbol
   end
 
   def more_than_minimun_plays_to_win?(board_size)

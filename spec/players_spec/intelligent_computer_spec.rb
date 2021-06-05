@@ -59,7 +59,7 @@ RSpec.describe IntelligentComputer do
           end
         end
       end
-      it 'returns 5 ' do
+      it 'should return 5 ' do
         expect(subject.make_move(playing_board)).to eq 5
       end
     end
@@ -68,7 +68,7 @@ RSpec.describe IntelligentComputer do
     # -O-
     # OXX
 
-    context 'two moves away from winning' do
+    context 'one moves away from winning' do
       before do
         [
           [[1, 3, 8, 9], 'X'],
@@ -79,7 +79,7 @@ RSpec.describe IntelligentComputer do
           end
         end
       end
-      it 'returns 5 ' do
+      it 'should return 6 ' do
         expect(subject.make_move(playing_board)).to eq 6
       end
     end

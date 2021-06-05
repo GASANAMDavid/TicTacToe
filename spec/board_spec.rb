@@ -67,5 +67,14 @@ RSpec.describe Board do
         end
       end
     end
+
+    context '#reset_move' do
+      let(:valid_move) { { 1 => { row: 0, col: 0 } } }
+      it 'resets a previously played position to empty' do
+        player_board.apply_move('X', valid_move.keys[0])
+        player_board.reset_move(valid_move.values[0])
+        expect(player_board.board[0][0]).to eq('-')
+      end
+    end
   end
 end

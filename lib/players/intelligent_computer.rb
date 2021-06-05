@@ -19,7 +19,7 @@ class IntelligentComputer < Player
     best_move
   end
 
-  def minimax(current_board, is_maxmizing, value = 1)
+  def minimax(current_board, is_maxmizing)
     score = compute_score(current_board)
     return score unless score.nil?
 
@@ -42,7 +42,7 @@ class IntelligentComputer < Player
     unless is_maxmizing
       available_positions.each do |key, move|
         current_board.apply_move('X', key)
-        score = minimax(current_board, true, value)
+        score = minimax(current_board, true)
         current_board.reset_move(move)
         unless score.nil?
           scores << score

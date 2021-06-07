@@ -8,7 +8,6 @@ class IntelligentComputer < Player
     available_positions.each do |key, move|
       playing_board.apply_move('O', key)
       static_evaluation_score = minimax(playing_board, false)
-      p static_evaluation_score
       playing_board.reset_move(move)
       if !static_evaluation_score.nil? && (static_evaluation_score > best_score)
         best_move = key
@@ -25,6 +24,7 @@ class IntelligentComputer < Player
 
     scores = []
     moves = []
+
     available_positions = current_board.blank_positions.clone
     if is_maxmizing
       available_positions.each do |key, move|
@@ -56,6 +56,6 @@ class IntelligentComputer < Player
   def compute_score(current_board)
     return +1 if current_board.board_state('O') == ('Winner')
     return -1 if current_board.board_state('X') == ('Winner')
-    return 0 if current_board.board_state('O') == 'Tie'
+    return 0 if current_board.board_state('X') == 'Tie'
   end
 end

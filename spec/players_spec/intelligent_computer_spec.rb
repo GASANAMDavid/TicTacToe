@@ -65,13 +65,13 @@ RSpec.describe IntelligentComputer do
     end
 
     # XOX
-    # -O-
-    # OXX
+    # -OX
+    # OX-
 
     context 'one moves away from winning' do
       before do
         [
-          [[1, 3, 8, 9], 'X'],
+          [[1, 3, 8, 6], 'X'],
           [[2, 5, 7], 'O']
         ].each do |moves, symbol|
           moves.each do |move|
@@ -80,7 +80,7 @@ RSpec.describe IntelligentComputer do
         end
       end
       it 'should return 6 ' do
-        expect(subject.make_move(playing_board)).to eq 6
+        expect(subject.make_move(playing_board)).to eq 9
       end
     end
   end

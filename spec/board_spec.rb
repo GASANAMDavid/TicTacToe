@@ -12,6 +12,30 @@ RSpec.describe Board do
     player_board.apply_move('X', 1)
     expect(player_board.board).to eq([%w[X - -], %w[- - -], %w[- - -]])
   end
+
+  describe 'number of positions remaining and already played' do
+    before do
+      [
+        [[1, 3, 8, 6], 'X'],
+        [[2, 5, 7], 'O']
+      ].each do |moves, symbol|
+        moves.each do |move|
+          player_board.apply_move(symbol, move)
+        end
+      end
+    end
+    context '#number_of_played_positions' do
+      it 'returns 8' do
+        expect(player_board.number_of_played_positions).to eq(7)
+      end
+    end
+    context '#blank_positions' do
+      it 'returns a hash of key/value pairs. Key represanting a blank position on a board' do
+        expect(player_board.blank_positions).to eq({ 4 => { row: 1, col: 0 }, 9 => { row: 2, col: 2 } })
+      end
+    end
+  end
+
   describe '#board_state' do
     context 'when the game is won' do
       [
@@ -34,37 +58,35 @@ RSpec.describe Board do
       end
     end
 
-    context 'when the game is Tied' do
-      [
-        [[1, 6, 4, 3, 8], 'X',
-         [5, 2, 7, 9], 'O']
-      ].each do |first_player_moves, first_player_symbol, second_player_moves, second_player_symbol|
-        it 'returns Tie' do
-          first_player_moves.each do |move|
-            player_board.apply_move(first_player_symbol, move)
+    context 'when the game should be tied' do
+      before do
+        [
+          [[1, 3, 8, 6, 4], 'X'],
+          [[2, 5, 7, 9], 'O']
+        ].each do |moves, symbol|
+          moves.each do |move|
+            player_board.apply_move(symbol, move)
           end
-          second_player_moves.each do |move|
-            player_board.apply_move(second_player_symbol, move)
-          end
-          expect(player_board.board_state(first_player_symbol)).to eq 'Tie'
         end
+      end
+      it 'should return tie ' do
+        expect(player_board.board_state('X')).to eq('Tie')
       end
     end
 
     context 'unfinished game' do
-      [
-        [[1, 6, 4, 3], 'X',
-         [5, 2, 7], 'O']
-      ].each do |first_player_moves, first_player_symbol, second_player_moves, second_player_symbol|
-        it 'returns nil indicating that the game continues' do
-          first_player_moves.each do |move|
-            player_board.apply_move(first_player_symbol, move)
+      before do
+        [
+          [[1, 3, 6, 4], 'X'],
+          [[2, 5, 7], 'O']
+        ].each do |moves, symbol|
+          moves.each do |move|
+            player_board.apply_move(symbol, move)
           end
-          second_player_moves.each do |move|
-            player_board.apply_move(second_player_symbol, move)
-          end
-          expect(player_board.board_state(first_player_symbol)).to eq nil
         end
+      end
+      it 'should return nil for unfinished game ' do
+        expect(player_board.board_state('X')).to eq(nil)
       end
     end
 

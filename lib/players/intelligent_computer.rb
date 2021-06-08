@@ -9,7 +9,7 @@ class IntelligentComputer < Player
       playing_board.apply_move('O', key)
       static_evaluation_score = minimax(playing_board, false)
       playing_board.reset_move(move)
-      if !static_evaluation_score.nil? && (static_evaluation_score > best_score)
+      if static_evaluation_score > best_score
         best_move = key
         best_score = static_evaluation_score
       end
@@ -23,7 +23,6 @@ class IntelligentComputer < Player
     return score unless score.nil?
 
     scores = []
-
     available_positions = current_board.blank_positions.clone
     player_symbol = is_maxmizing ? 'O' : 'X'
     available_positions.each do |key, move|

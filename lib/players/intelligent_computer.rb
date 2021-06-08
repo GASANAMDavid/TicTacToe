@@ -23,7 +23,6 @@ class IntelligentComputer < Player
     return score unless score.nil?
 
     scores = []
-    moves = []
 
     available_positions = current_board.blank_positions.clone
     player_symbol = is_maxmizing ? 'O' : 'X'
@@ -31,13 +30,9 @@ class IntelligentComputer < Player
       current_board.apply_move(player_symbol, key)
       score = minimax(current_board, !is_maxmizing)
       current_board.reset_move(move)
-      unless score.nil?
-        scores << score
-        moves << key
-      end
-      score = is_maxmizing ? scores.max { |a, b| a <=> b } : scores.min { |a, b| a <=> b }
-      return score unless score.nil?
+      scores << score unless score.nil?
     end
+    is_maxmizing ? scores.max { |a, b| a <=> b } : scores.min { |a, b| a <=> b }
   end
 
   def compute_score(current_board)

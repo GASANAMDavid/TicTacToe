@@ -31,7 +31,7 @@ class IntelligentComputer < Player
       current_board.reset_move(move)
       scores << score if score
     end
-    is_maxmizing ? scores.max : scores.min 
+    is_maxmizing ? scores.max : scores.min
   end
 
   def compute_score(current_board)

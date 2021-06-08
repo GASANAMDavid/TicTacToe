@@ -17,13 +17,13 @@ class GameEngine
     loop do
       UserInterface.display_which_player_turn(current_player)
       move = current_player.make_move(playing_board)
-      next if move.nil?
+      next unless move
 
       playing_board.apply_move(current_player.symbol, move)
 
       game_status = GameStatus.find(current_player, playing_board)
 
-      unless game_status.nil?
+      if game_status
         UserInterface.display_game_outcome(game_status)
         break
       end

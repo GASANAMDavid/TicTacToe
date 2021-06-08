@@ -13,7 +13,6 @@ class Board
   def apply_move(symbol, move)
     position = blank_positions[move]
     board[position[:row]][position[:col]] = symbol
-    # @num_of_played_positions += 1
     blank_positions.delete(blank_positions.key(position))
   end
 

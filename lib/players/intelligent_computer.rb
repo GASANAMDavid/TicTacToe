@@ -26,30 +26,17 @@ class IntelligentComputer < Player
     moves = []
 
     available_positions = current_board.blank_positions.clone
-    if is_maxmizing
-      available_positions.each do |key, move|
-        current_board.apply_move('O', key)
-        score = minimax(current_board, false)
-        current_board.reset_move(move)
-        unless score.nil?
-          scores << score
-          moves << key
-        end
+    player_symbol = is_maxmizing ? 'O' : 'X'
+    available_positions.each do |key, move|
+      current_board.apply_move(player_symbol, key)
+      score = minimax(current_board, !is_maxmizing)
+      current_board.reset_move(move)
+      unless score.nil?
+        scores << score
+        moves << key
       end
-      return scores.max { |a, b| a <=> b } unless scores.empty?
-    end
-
-    unless is_maxmizing
-      available_positions.each do |key, move|
-        current_board.apply_move('X', key)
-        score = minimax(current_board, true)
-        current_board.reset_move(move)
-        unless score.nil?
-          scores << score
-          moves << key
-        end
-      end
-      scores.min { |a, b| a <=> b } unless scores.empty?
+      score = is_maxmizing ? scores.max { |a, b| a <=> b } : scores.min { |a, b| a <=> b }
+      return score unless score.nil?
     end
   end
 

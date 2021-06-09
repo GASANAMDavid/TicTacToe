@@ -1,5 +1,6 @@
 require_relative '../lib/players/human'
 require_relative '../lib/players/random_computer'
+require_relative '../lib/players/intelligent_computer'
 require_relative '../lib/board'
 module Interface
   class << self; attr_accessor :output, :input end
@@ -44,5 +45,9 @@ module Interface
 
   def self.random_computer_info
     RandomComputer.new('Random Computer', 'O')
+  end
+
+  def self.intelligent_computer_info
+    IntelligentComputer.new('Intelligent Computer', 'O')
   end
 end

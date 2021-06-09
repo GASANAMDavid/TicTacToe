@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative '../config/interface'
 require_relative '../config/setup'
 

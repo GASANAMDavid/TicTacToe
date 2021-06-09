@@ -12,6 +12,10 @@ module GameSetUp
       human_player = Interface.human_player_info('human')
       random_computer_player = Interface.random_computer_info
       GameEngine.new(board, human_player, random_computer_player)
+    when 3
+      human_player = Interface.human_player_info('human')
+      intelligent_computer_player = Interface.intelligent_computer_info
+      GameEngine.new(board, human_player, intelligent_computer_player)
     end
   end
 end

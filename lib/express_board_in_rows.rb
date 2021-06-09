@@ -5,8 +5,8 @@ module BoardAsRows
       all_as_rows << row
     end
 
-    board.transpose.each do |row|
-      all_as_rows << row
+    board.transpose.each do |col|
+      all_as_rows << col
     end
 
     all_as_rows << (0...board.size).collect do |item|

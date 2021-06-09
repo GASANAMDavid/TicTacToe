@@ -1,0 +1,35 @@
+fr:
+  welcome_message: "\t\t\tBienvenue au Jeu de TIC TAC ORTEIL\n"
+  instructions:
+    header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
+    one: "\t1. Les joueurs choisissent un symbole unique à utiliser comme marque tout au long du jeu.\n"
+    two: "\t2. Le jeu se joue sur une grille de 3 par 3.\n"
+    three: "\t3. Les joueurs mettent à tour de rôle leurs marques dans des cases vides.\n"
+    four: "\t4. Le premier joueur à mettre 3 symboles dans l'une des 3 rangées ou 3 colonnes ou l'une des diagonales est le GAGNANT.\n"
+    five: "\t5. Si les 9 cases sont pleines et qu'il n'y a pas de gagnant, le jeu est à égalité et terminé.\n\n"
+    ending_line: "\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n\n"
+  game_mode:
+    header: "\t\tModes de jeu\n\t\t~~~~~~~~~~\n\n"
+    one: "\t1. Humain contre Humain\n"
+    two: "\t2. L'humain contre l'ordinateur aléatoire\n"
+    three: "\t3. L'humain contre l'ordinateur intelligent\n"
+    four: "\t4. Ordinateur intelligent contre ordinateur intelligent\n"
+    choose_msg: "\nChoisissez un numéro correspondant à votre choix:\n"
+
+  human_player_info:
+    name: "Entrez le nom du %{order} joueur."
+    symbol: "Entrez le symbole du %{order} joueur."
+  random_computer:
+    name: "Ordinateur Aléatoire"
+    symbol: "O"
+  first: "premier"
+  second: "second"
+  human: "humain"
+
+  prompt_board_size: "Entrez la taille de la planche"
+  choose_move_msg: "Entrez votre choix"
+  current_player_name: "au tour de %{name}"
+  prompt_continue_or_exit_game: "Appuyez sur Y pour continuer| N pour sortir"
+  game_status:
+    draw: "C'est un tirage"
+    win: "%{name} a gagné le match"

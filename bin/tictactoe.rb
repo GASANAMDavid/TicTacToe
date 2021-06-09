@@ -1,12 +1,15 @@
 require_relative '../config/interface'
 require_relative '../config/setup'
+require_relative '../config/env_variables'
 
 Interface.display_instructions
-loop do
+game_on = true
+while game_on
   choice = Interface.choose_mode
   game = GameSetUp.setup(choice)
   game.play
-  puts "\n\nPress Y to continue| N to exit"
+  puts I18n.t('prompt_continue_or_exit_game')
   choice = gets.chomp
-  break unless choice.downcase == 'y'
+  game_on = choice.downcase == 'y'
+  system('clear')
 end

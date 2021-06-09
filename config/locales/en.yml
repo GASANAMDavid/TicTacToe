@@ -1,0 +1,35 @@
+en:
+  welcome_message: "\t\t\tWelcome to TIC TAC TOE Game\n"
+  instructions:
+    header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
+    one: "\t1. Players choose a unique symbol to use as a mark throughtout the game.\n"
+    two: "\t2. The game is played on a grid of 3 by 3.\n"
+    three: "\t3. Players take turns putting their marks into empty squares.\n"
+    four: "\t4. The first player to put 3 symbols in any of the 3 rows or 3 columns or any of the diagonals is the WINNER.\n"
+    five: "\t5. If all 9 squares are full and there is no winner the game is TIED and Over.\n\n"
+    ending_line: "\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n\n"
+  game_mode:
+    header: "\t\tGame Modes\n\t\t~~~~~~~~~~\n\n"
+    one: "\t1. Human Vs Human\n"
+    two: "\t2. Human Vs Random Computer\n"
+    three: "\t3. Human Vs Intelligent Computer\n"
+    four: "\t4. Intelligent Vs Intelligent Computer\n"
+    choose_msg: "\nChoose a number corresponding to your choice:\n"
+
+  human_player_info:
+    name: "Enter the %{order} player's name."
+    symbol: "Enter the %{order} player's symbol."
+  random_computer:
+    name: "Random Computer"
+    symbol: "O"
+  first: "first"
+  second: "second"
+  human: "human"
+
+  prompt_board_size: "Enter the board size"
+  choose_move_msg: "Enter your choice"
+  current_player_name: "%{name}'s turn"
+  prompt_continue_or_exit_game: "Press Y to continue| N to exit"
+  game_status:
+    draw: "It's a Draw"
+    win: "%{name} won the game"

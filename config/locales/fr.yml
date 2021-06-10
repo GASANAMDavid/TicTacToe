@@ -1,23 +1,23 @@
 fr:
   choose_language_msg: "Choisissez la langue"
-  english: "0. Anglais"
-  french: "1. Français"
+  languages: "0. Anglais\n1. Français"
   welcome_message: "\t\t\tBienvenue au Jeu de TIC TAC ORTEIL\n"
   instructions:
     header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
-    one: "\t1. Les joueurs choisissent un symbole unique à utiliser comme marque tout au long du jeu.\n"
-    two: "\t2. Le jeu se joue sur une grille de 3 par 3.\n"
-    three: "\t3. Les joueurs mettent à tour de rôle leurs marques dans des cases vides.\n"
-    four: "\t4. Le premier joueur à mettre 3 symboles dans l'une des 3 rangées ou 3 colonnes ou l'une des diagonales est le GAGNANT.\n"
-    five: "\t5. Si les 9 cases sont pleines et qu'il n'y a pas de gagnant, le jeu est à égalité et terminé.\n\n"
+    body:
+      "\t1. Les joueurs choisissent un symbole unique à utiliser comme marque tout au long du jeu.\n
+      \t2. Le jeu se joue sur une grille de 3 par 3.\n
+      \t3. Les joueurs mettent à tour de rôle leurs marques dans des cases vides.\n
+      \t4. Le premier joueur à mettre 3 symboles dans l'une des 3 rangées ou 3 colonnes ou l'une des diagonales est le GAGNANT.\n
+      \t5. Si les 9 cases sont pleines et qu'il n'y a pas de gagnant, le jeu est à égalité et terminé.\n\n"
     ending_line: "\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n\n"
   game_mode:
     header: "\t\tModes de jeu\n\t\t~~~~~~~~~~\n\n"
-    one: "\t1. Humain contre Humain\n"
-    two: "\t2. L'humain contre l'ordinateur aléatoire\n"
-    three: "\t3. L'humain contre l'ordinateur intelligent\n"
-    four: "\t4. Ordinateur intelligent contre ordinateur intelligent\n"
-    choose_msg: "\nChoisissez un numéro correspondant à votre choix:\n"
+    body: "\t1. Humain contre Humain\n
+      \t2. L'humain contre l'ordinateur aléatoire\n
+      \t3. L'humain contre l'ordinateur intelligent\n
+      \t4. Ordinateur intelligent contre ordinateur intelligent\n"
+    choose_msg: "\n\tChoisissez un numéro correspondant à votre choix:\n"
 
   human_player_info:
     name: "Entrez le nom du %{order} joueur."

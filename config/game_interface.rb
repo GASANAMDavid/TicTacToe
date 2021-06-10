@@ -1,25 +1,20 @@
 require_relative '../lib/board'
 require_relative 'env_variables'
-module Interface
+module GameInterface
   class << self; attr_accessor :output, :input end
   self.output = $stdout
   self.input = $stdin
 
   def self.display_language_options
     output.puts I18n.t('choose_language_msg')
-    output.puts I18n.t('english')
-    output.puts I18n.t('french')
+    output.puts I18n.t('languages')
     input.gets.chomp.to_i
   end
 
   def self.display_instructions
     output.puts I18n.t('welcome_message')
     output.puts I18n.t('instructions.header')
-    output.puts I18n.t('instructions.one')
-    output.puts I18n.t('instructions.two')
-    output.puts I18n.t('instructions.three')
-    output.puts I18n.t('instructions.four')
-    output.puts I18n.t('instructions.five')
+    output.puts I18n.t('instructions.body')
     output.puts I18n.t('instructions.ending_line')
   end
 
@@ -29,10 +24,7 @@ module Interface
 
   def self.choose_mode
     output.puts I18n.t('game_mode.header')
-    output.puts I18n.t('game_mode.one')
-    output.puts I18n.t('game_mode.two')
-    output.puts I18n.t('game_mode.three')
-    output.puts I18n.t('game_mode.four')
+    output.puts I18n.t('game_mode.body')
     output.puts I18n.t('game_mode.choose_msg')
     input.gets.chomp.to_i
   end

@@ -10,7 +10,7 @@ module UserInterface
     end
   end
 
-  def self.get_players_move
+  def self.prompt_player_for_move
     output.puts I18n.t('choose_move_msg')
     input.gets.chomp.to_i
   end
@@ -20,7 +20,6 @@ module UserInterface
   end
 
   def self.display_game_outcome(game_status)
-    output.puts "\n\n"
     output.puts game_status
   end
 end

@@ -20,6 +20,7 @@ module UserInterface
   end
 
   def self.display_game_outcome(game_status)
+    output.puts "\n\n"
     output.puts game_status
   end
 end

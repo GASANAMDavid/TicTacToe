@@ -14,7 +14,8 @@ class GameEngine
 
   def play
     current_player = first_player
-    loop do
+    game_on = true
+    while game_on
       UserInterface.display_which_player_turn(current_player)
       move = current_player.make_move(playing_board)
       next unless move
@@ -24,8 +25,10 @@ class GameEngine
       game_status = GameStatus.find(current_player, playing_board)
 
       if game_status
+        system('clear')
+        UserInterface.see_board(playing_board.board)
         UserInterface.display_game_outcome(game_status)
-        break
+        game_on = false
       end
 
       current_player = switch_players(current_player)

@@ -1,4 +1,7 @@
 fr:
+  choose_language_msg: "Choisissez la langue"
+  english: "0. Anglais"
+  french: "1. Français"
   welcome_message: "\t\t\tBienvenue au Jeu de TIC TAC ORTEIL\n"
   instructions:
     header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
@@ -22,14 +25,21 @@ fr:
   random_computer:
     name: "Ordinateur Aléatoire"
     symbol: "O"
+  intelligent_computer:
+    name: "ordinateur intelligent"
+    symbol: "O"
   first: "premier"
   second: "second"
   human: "humain"
+  choose_first_player:
+    msg: "Choisissez qui joue en premier"
+    one: "1. %{name}"
+    two: "2. %{name}"
 
   prompt_board_size: "Entrez la taille de la planche"
   choose_move_msg: "Entrez votre choix"
   current_player_name: "au tour de %{name}"
-  prompt_continue_or_exit_game: "Appuyez sur Y pour continuer| N pour sortir"
+  prompt_continue_or_exit_game: "\n\nAppuyez sur Y pour continuer| N pour sortir"
   game_status:
     draw: "C'est un tirage"
     win: "%{name} a gagné le match"

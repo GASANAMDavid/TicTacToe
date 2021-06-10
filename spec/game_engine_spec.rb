@@ -3,7 +3,7 @@ require_relative '../lib/user_interface'
 require 'stringio'
 
 RSpec.describe GameEngine do
-  let(:board) { double('board') }
+  let(:board) { double('board', board: [['-']]) }
   let(:player1) { double('player') }
   let(:player2) { double('player') }
   let(:output) { StringIO.new }
@@ -16,6 +16,7 @@ RSpec.describe GameEngine do
       allow(player1).to receive(:make_move).with(board).and_return(1, 4)
       allow(player1).to receive(:symbol).and_return('X').at_most(4).times
       allow(board).to receive(:apply_move).with('X', 1)
+      allow(UserInterface).to receive(:see_board)
     end
 
     it 'returns Tie if the state of the game is TIED ' do

@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby
+require_relative '../config/set_languages'
 require_relative '../config/interface'
-require_relative '../config/setup'
+require_relative '../config/game_set_up'
 require_relative '../config/env_variables'
 
+SetLanguages.change_language
+# system('clear')
 Interface.display_instructions
 game_on = true
 while game_on

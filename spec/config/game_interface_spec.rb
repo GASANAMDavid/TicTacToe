@@ -28,6 +28,5 @@ RSpec.describe GameInterface do
   it 'displays different game modes a user can pick from and return user mode choice' do
     expect(subject.choose_mode).to eq(1)
     expect(output.string).to include("#{I18n.t('game_mode.header')}#{I18n.t('game_mode.body')}")
-
   end
 end

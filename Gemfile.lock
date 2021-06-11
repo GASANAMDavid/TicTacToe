@@ -2,7 +2,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    concurrent-ruby (1.1.9)
     diff-lcs (1.4.4)
+    dotenv (2.7.6)
+    i18n (1.8.10)
+      concurrent-ruby (~> 1.0)
     parallel (1.20.1)
     parser (3.0.1.1)
       ast (~> 2.4.1)
@@ -42,9 +46,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.2.16)
+  dotenv (~> 2.1, >= 2.1.1)
+  i18n (~> 1.8, >= 1.8.10)
   rake
   rspec (~> 3.4)
   rubocop
 
 BUNDLED WITH
-   2.2.17
+   2.2.19

@@ -82,7 +82,7 @@ RSpec.describe IntelligentComputer do
     context 'after first players move is at the center of the board' do
       it 'returns move that is at corner of the board as intelligent computers best move' do
         playing_board.apply_move('X', 5)
-        expect([1, 3, 7, 9].include?(subject.make_move(playing_board))).to eq true
+        expect(subject.make_move(playing_board)).to eq 1
       end
     end
   end

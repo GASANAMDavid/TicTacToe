@@ -8,7 +8,7 @@ class Human < Player
 
   def make_move(playing_board)
     UserInterface.see_board(playing_board.board)
-    move = UserInterface.get_players_move
+    move = UserInterface.prompt_player_for_move
     move if validate_move(playing_board, move)
   end
 end

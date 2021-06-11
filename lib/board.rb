@@ -40,7 +40,7 @@ class Board
 
     if check_rows.any? { |row| win?(row, player_symbol) }
       'Winner'
-    elsif (number_of_played_positions == board_size * board_size) && blank_positions.empty?
+    elsif (number_of_played_positions == board_size * board_size)
       'Tie'
     end
   end

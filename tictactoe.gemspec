@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-require_relative 'lib/tictactoe/version'
+require_relative 'lib/TicTacToe/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'tictactoe'
+  spec.name          = 'TicTacToe'
   spec.version       = TicTacToe::VERSION
   spec.authors       = ['David Gasana Manzi']
   spec.email         = ['gmdavid59@gmail.com']
 
   spec.summary       = 'TicTacToe game using CLI.'
-  spec.description   = "This gem is used to play the TicTacToe game with different languages and different game modes\n\t1.Human Vs Human\h\tHuman Vs Random Computer\n\tHuman Vs Intelligent Computer\nIt allows its users to pick who goes first to play the game."
-  spec.homepage      = 'https://github.com/GASANAMDavid/TicTacToe'
+  # spec.description   = "This gem is used to play the TicTacToe game with different languages and different game modes\n\t1.Human Vs Human\h\tHuman Vs Random Computer\n\tHuman Vs Intelligent Computer\nIt allows its users to pick who goes first to play the game."
+  # spec.homepage      = 'https://github.com/GASANAMDavid/TicTacToe'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.6.3'
 
-  # spec.metadata['allowed_push_host'] = 'http://mygemserver.com'
+  spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata['homepage_uri'] = 'https://github.com/GASANAMDavid/TicTacToe'
   spec.metadata['source_code_uri'] = 'https://github.com/GASANAMDavid/TicTacToe'

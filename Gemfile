@@ -2,9 +2,5 @@
 
 source 'https://rubygems.org'
 
-gem 'bundler', '~> 2.2.16'
-gem 'dotenv', '~> 2.1', '>= 2.1.1'
-gem 'i18n', '~> 1.8', '>= 1.8.10'
-gem 'rake'
-gem 'rspec', '~> 3.4'
-gem 'rubocop'
+gemspec
+

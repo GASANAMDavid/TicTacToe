@@ -6,3 +6,5 @@ Style/GlobalVars:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
+Gemspec/RequiredRubyVersion:
+  Enabled: false

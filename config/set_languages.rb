@@ -1,4 +1,3 @@
-require_relative 'game_interface'
 module SetLanguages
   def self.change_language(lang = 'en')
     I18n.default_locale = lang

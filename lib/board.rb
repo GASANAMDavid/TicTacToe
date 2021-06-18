@@ -1,9 +1,8 @@
 require_relative 'express_board_in_rows'
 
-
 class Board
   include BoardAsRows
-  DENOTE_EMPTY = '-'
+  DENOTE_EMPTY = '-'.freeze
   attr_reader :board, :board_size
 
   def initialize(size)
@@ -41,7 +40,7 @@ class Board
 
     if check_rows.any? { |row| win?(row, player_symbol) }
       'Winner'
-    elsif (number_of_played_positions == board_size * board_size)
+    elsif number_of_played_positions == board_size * board_size
       'Tie'
     end
   end

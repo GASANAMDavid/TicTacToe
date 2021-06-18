@@ -1,6 +1,6 @@
-require_relative 'tictactoe/version'
-require_relative 'user_interface'
+require_relative 'TicTacToe/version'
 
+# Testing exposed interfaces in the gem
 module Hello
   def self.hello
     puts 'Hello World!'

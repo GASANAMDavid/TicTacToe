@@ -1,4 +1,3 @@
-require_relative '../config/env_variables'
 module UserInterface
   class << self; attr_accessor :output, :input end
   self.output = $stdout

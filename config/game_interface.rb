@@ -1,4 +1,4 @@
-require_relative './../lib/board'
+require_relative '../lib/board'
 require_relative './env_variables'
 module GameInterface
   class << self; attr_accessor :output, :input end

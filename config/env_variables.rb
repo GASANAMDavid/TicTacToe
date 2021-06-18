@@ -1,9 +1,7 @@
 require 'i18n'
 require 'dotenv'
-# puts 'Test env variables'
 Dotenv.load
-path = Dir["#{File.expand_path('config/locales')}/*.yml"]
-puts path
-# I18n.load_path << 
-# I18n.default_locale = 'en'
-# puts 'after everything'
+path = Dir.glob('config/locales/**.yml')
+I18n.load_path << path
+# path2 = Dir["#{File.expand_path('config/locales')}/*.yml"]
+I18n.default_locale = 'en'

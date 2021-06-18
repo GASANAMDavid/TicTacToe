@@ -1,5 +1,6 @@
 require_relative 'express_board_in_rows'
 
+
 class Board
   include BoardAsRows
   DENOTE_EMPTY = '-'

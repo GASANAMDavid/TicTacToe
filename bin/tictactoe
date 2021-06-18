@@ -5,8 +5,9 @@ require_relative '../config/set_languages'
 require_relative '../config/game_interface'
 require_relative '../config/game_set_up'
 require_relative '../config/env_variables'
-
-SetLanguages.change_language
+languages = %w[en fr]
+choice = GameInterface.display_language_options
+SetLanguages.change_language(languages[choice])
 GameInterface.display_instructions
 game_on = true
 while game_on

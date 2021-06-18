@@ -8,5 +8,3 @@ require_relative './board'
 require_relative './players/human'
 require_relative './players/intelligent_computer'
 
-
-# Testing exposed interfaces in the gem

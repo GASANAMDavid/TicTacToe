@@ -1,8 +1,8 @@
 require_relative './game_interface'
-require_relative './../lib/game_engine'
-require_relative './../lib/players/human'
-require_relative './../lib/players/random_computer'
-require_relative './../lib/players/intelligent_computer'
+require_relative '../lib/game_engine'
+require_relative '../lib/players/human'
+require_relative '../lib/players/random_computer'
+require_relative '../lib/players/intelligent_computer'
 require 'i18n'
 module GameSetUp
   def self.setup(choice)

@@ -7,4 +7,7 @@ require_relative './game_engine'
 require_relative './board'
 require_relative './players/human'
 require_relative './players/intelligent_computer'
-
+require_relative './express_board_in_rows'
+require_relative './../config/env_variables'
+require_relative './../game_interface'
+require_relative './../config/game_set_up'

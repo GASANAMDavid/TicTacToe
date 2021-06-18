@@ -10,7 +10,7 @@ require_relative './players/intelligent_computer'
 require_relative './express_board_in_rows'
 # require_relative '../config/env_variables'
 # require_relative '../config/game_interface'
-require_relative '../hello/test'
+require_relative '../config/test'
 # require_relative '../config/game_set_up'
 # SetLanguages.change_language('fr')
 # GameInterface.display_language_options

@@ -6,7 +6,7 @@ RSpec.describe GameSetUp do
       allow(GameSetUp).to receive(:system).with('clear').at_most(3).times
       allow(GameInterface).to receive(:human_player_info).and_return({ name: 'David', symbol: 'D' })
       allow(GameInterface).to receive(:choose_who_plays_first).and_return(1)
-      expect(GameInterface).to receive(:make_board)
+      expect(GameInterface).to receive(:prompt_board_size).and_return(3)
     end
 
     context "set up the game from user's mode choice" do

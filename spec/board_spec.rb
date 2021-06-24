@@ -13,6 +13,12 @@ RSpec.describe Board do
     expect(player_board.board).to eq([%w[X - -], %w[- - -], %w[- - -]])
   end
 
+  it 'changes the board to a new state' do
+    new_board_state = [['-', 'X', 'O'], ['-', 'O', 'X'], ['X', 'O', '-']]
+    player_board.board = new_board_state
+    expect(player_board.board).to eq(new_board_state)
+  end
+
   describe 'number of positions remaining and already played' do
     before do
       [
@@ -89,14 +95,31 @@ RSpec.describe Board do
         expect(player_board.board_state('X')).to eq(nil)
       end
     end
+  end
+  context '#reset_move' do
+    let(:valid_move) { { 1 => { row: 0, col: 0 } } }
+    it 'resets a previously played position to empty' do
+      player_board.apply_move('X', valid_move.keys[0])
+      player_board.reset_move(valid_move.values[0])
+      expect(player_board.board[0][0]).to eq('-')
+    end
+  end
 
-    context '#reset_move' do
-      let(:valid_move) { { 1 => { row: 0, col: 0 } } }
-      it 'resets a previously played position to empty' do
-        player_board.apply_move('X', valid_move.keys[0])
-        player_board.reset_move(valid_move.values[0])
-        expect(player_board.board[0][0]).to eq('-')
+  context '#reset_board' do
+    it 'resets the current board' do
+      [
+        ['X', 1],
+        ['O', 2],
+        ['X', 3],
+        ['O', 4]
+      ].each do |symbol, move|
+        player_board.apply_move(symbol, move)
       end
+      player_board.reset_board
+      expect(player_board.board[0][0]).to eq('-')
+      expect(player_board.board[0][1]).to eq('-')
+      expect(player_board.board[0][2]).to eq('-')
+      expect(player_board.board[1][0]).to eq('-')
     end
   end
 end

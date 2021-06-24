@@ -3,7 +3,7 @@ require_relative 'express_board_in_rows'
 class Board
   include BoardAsRows
   DENOTE_EMPTY = '-'.freeze
-  attr_reader :board, :board_size
+  attr_accessor :board, :board_size
 
   def initialize(size)
     @board = Array.new(size) { Array.new(size) { DENOTE_EMPTY } }
@@ -47,6 +47,14 @@ class Board
 
   def reset_move(move)
     board[move[:row]][move[:col]] = DENOTE_EMPTY
+  end
+
+  def reset_board
+    (0...board_size).each do |row|
+      (0...board_size).each do |col|
+        board[row][col] = DENOTE_EMPTY
+      end
+    end
   end
 
   private

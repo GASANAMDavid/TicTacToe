@@ -1,8 +1,9 @@
-require_relative 'game_interface'
+require_relative './game_interface'
 require_relative '../lib/game_engine'
 require_relative '../lib/players/human'
 require_relative '../lib/players/random_computer'
 require_relative '../lib/players/intelligent_computer'
+require_relative '../lib/board'
 require 'i18n'
 module GameSetUp
   def self.setup(choice)
@@ -34,7 +35,12 @@ module GameSetUp
       player_two = first_player
     end
     system('clear')
-    board = GameInterface.make_board
+    size = GameInterface.prompt_board_size
+    board = create_board(size)
     GameEngine.new(board, player_one, player_two)
+  end
+
+  def self.create_board(size)
+    Board.new(size)
   end
 end

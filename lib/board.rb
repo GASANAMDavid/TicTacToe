@@ -2,8 +2,8 @@ require_relative 'express_board_in_rows'
 
 class Board
   include BoardAsRows
-  DENOTE_EMPTY = '-'
-  attr_reader :board, :board_size
+  DENOTE_EMPTY = '-'.freeze
+  attr_accessor :board, :board_size
 
   def initialize(size)
     @board = Array.new(size) { Array.new(size) { DENOTE_EMPTY } }
@@ -40,13 +40,21 @@ class Board
 
     if check_rows.any? { |row| win?(row, player_symbol) }
       'Winner'
-    elsif (number_of_played_positions == board_size * board_size)
+    elsif number_of_played_positions == board_size * board_size
       'Tie'
     end
   end
 
   def reset_move(move)
     board[move[:row]][move[:col]] = DENOTE_EMPTY
+  end
+
+  def reset_board
+    (0...board_size).each do |row|
+      (0...board_size).each do |col|
+        board[row][col] = DENOTE_EMPTY
+      end
+    end
   end
 
   private

@@ -1,5 +1,4 @@
-require_relative '../lib/board'
-require_relative 'env_variables'
+require_relative './env_variables'
 module GameInterface
   class << self; attr_accessor :output, :input end
   self.output = $stdout
@@ -36,10 +35,9 @@ module GameInterface
     input.gets.chomp.to_i
   end
 
-  def self.make_board
+  def self.prompt_board_size
     output.puts I18n.t('prompt_board_size')
-    size = input.gets.chomp.to_i
-    Board.new(size)
+    input.gets.chomp.to_i
   end
 
   def self.human_player_info(order)

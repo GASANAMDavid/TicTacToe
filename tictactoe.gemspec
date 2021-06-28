@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'lib/tictactoe/version'
+require_relative 'lib/TicTacToe/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'tictactoe'
+  spec.name          = 'TicTacToe'
   spec.version       = TicTacToe::VERSION
   spec.authors       = ['David Gasana Manzi']
   spec.email         = ['gmdavid59@gmail.com']

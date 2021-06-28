@@ -1,12 +1,12 @@
-require_relative '../../config/game_interface'
+require_relative '../../lib/game_config/game_interface'
 require 'stringio'
 
-RSpec.describe GameInterface do
+RSpec.describe TicTacToe::GameInterface do
   let(:output) { StringIO.new }
   let(:input) { StringIO.new("1\n") }
   before do
-    GameInterface.output = output
-    GameInterface.input = input
+    TicTacToe::GameInterface.output = output
+    TicTacToe::GameInterface.input = input
   end
 
   it 'displays languages to the output stream and return user choice' do

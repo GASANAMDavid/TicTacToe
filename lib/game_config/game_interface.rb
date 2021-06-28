@@ -1,4 +1,5 @@
-require_relative './env_variables'
+require_relative '../../config//env_variables'
+module TicTacToe
 module GameInterface
   class << self; attr_accessor :output, :input end
   self.output = $stdout
@@ -55,4 +56,5 @@ module GameInterface
   def self.intelligent_computer_info
     { name: I18n.t('intelligent_computer.name'), symbol: I18n.t('intelligent_computer.symbol') }
   end
+end
 end

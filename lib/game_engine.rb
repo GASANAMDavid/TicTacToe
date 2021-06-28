@@ -23,7 +23,7 @@ module TicTacToe
 
         playing_board.apply_move(current_player.symbol, move)
 
-        game_status = GameStatus.find(current_player, playing_board)
+        game_status = GameStatus.find(current_player.name, current_player.symbol, playing_board)
 
         if game_status
           system('clear')

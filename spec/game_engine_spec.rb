@@ -12,7 +12,7 @@ RSpec.describe TicTacToe::GameEngine do
   context '#play' do
     before do
       TicTacToe::UserInterface.output = output
-      allow(player1).to receive(:name).and_return("N'Golo").at_most(3).times
+      allow(player1).to receive(:name).and_return("N'Golo").at_most(4).times
       allow(player1).to receive(:make_move).with(board).and_return(1, 4)
       allow(player1).to receive(:symbol).and_return('X').at_most(4).times
       allow(board).to receive(:apply_move).with('X', 1)
@@ -33,7 +33,7 @@ RSpec.describe TicTacToe::GameEngine do
     context 'testing loop' do
       before do
         allow(board).to receive(:board_state).with('X').and_return(nil).at_most(3).times
-        allow(player2).to receive(:name).and_return('Kante').at_most(3).times
+        allow(player2).to receive(:name).and_return('Kante').at_most(4).times
         allow(player2).to receive(:make_move).with(board).and_return(2, 9)
         allow(player2).to receive(:symbol).and_return('O').at_most(4).times
         allow(board).to receive(:apply_move).with('O', 2)

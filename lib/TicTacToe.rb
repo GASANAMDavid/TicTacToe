@@ -11,5 +11,6 @@ require_relative './express_board_in_rows'
 require_relative '../config/env_variables'
 require_relative './game_config/game_interface'
 require_relative './game_config/game_set_up'
+require_relative './web_engine'
 
 

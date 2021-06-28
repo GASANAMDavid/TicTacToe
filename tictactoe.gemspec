@@ -3,7 +3,7 @@
 require_relative 'lib/tictactoe/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'TicTacToe'
+  spec.name          = 'tictactoe'
   spec.version       = TicTacToe::VERSION
   spec.authors       = ['David Gasana Manzi']
   spec.email         = ['gmdavid59@gmail.com']

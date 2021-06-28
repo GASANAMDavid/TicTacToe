@@ -1,4 +1,4 @@
-require_relative 'TicTacToe/version'
+require_relative './TicTacToe/version'
 require_relative './game_config/set_languages'
 require_relative './user_interface'
 require_relative './validation'

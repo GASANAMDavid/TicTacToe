@@ -1,4 +1,4 @@
-require_relative '../../config/set_languages'
+require_relative '../../lib/game_config/set_languages'
 
 RSpec.describe TicTacToe::SetLanguages do
   context '.change_language' do

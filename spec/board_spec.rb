@@ -1,9 +1,9 @@
 require_relative '../lib/board'
 require 'stringio'
 
-RSpec.describe Board do
+RSpec.describe TicTacToe::Board do
   let(:output) { StringIO.new }
-  let(:player_board) { Board.new(3) }
+  let(:player_board) { TicTacToe::Board.new(3) }
   it 'initializes the board with size' do
     expect(player_board.board).to eq([%w[- - -], %w[- - -], %w[- - -]])
   end

@@ -1,8 +1,8 @@
 require_relative '../../lib/players/random_computer'
 
-RSpec.describe RandomComputer do
+RSpec.describe TicTacToe::RandomComputer do
   let(:playing_board) { double }
-  let(:subject) { RandomComputer.new('Random Computer', 'O') }
+  let(:subject) { TicTacToe::RandomComputer.new('Random Computer', 'O') }
 
   context '#make_move' do
     it 'makes and returns a random move from available blank positions' do

@@ -1,10 +1,10 @@
 require_relative '../../lib/players/intelligent_computer'
 require_relative '../../lib/board'
 
-RSpec.describe IntelligentComputer do
+RSpec.describe TicTacToe::IntelligentComputer do
   describe '#make_move' do
-    let(:subject) { IntelligentComputer.new('Intelligent Computer', 'O') }
-    let(:playing_board) { Board.new(3) }
+    let(:subject) { TicTacToe::IntelligentComputer.new('Intelligent Computer', 'O') }
+    let(:playing_board) { TicTacToe::Board.new(3) }
     context 'starting from leaf nodes with one play away from finishing the game' do
       before do
         [

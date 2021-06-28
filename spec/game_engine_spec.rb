@@ -2,21 +2,21 @@ require_relative '../lib/game_engine'
 require_relative '../lib/user_interface'
 require 'stringio'
 
-RSpec.describe GameEngine do
+RSpec.describe TicTacToe::GameEngine do
   let(:board) { double('board', board: [['-']]) }
   let(:player1) { double('player') }
   let(:player2) { double('player') }
   let(:output) { StringIO.new }
-  let(:subject) { GameEngine.new(board, player1, player2) { include UserInterface } }
+  let(:subject) { TicTacToe::GameEngine.new(board, player1, player2) { include TicTacToe::UserInterface } }
 
   context '#play' do
     before do
-      UserInterface.output = output
+      TicTacToe::UserInterface.output = output
       allow(player1).to receive(:name).and_return("N'Golo").at_most(3).times
       allow(player1).to receive(:make_move).with(board).and_return(1, 4)
       allow(player1).to receive(:symbol).and_return('X').at_most(4).times
       allow(board).to receive(:apply_move).with('X', 1)
-      allow(UserInterface).to receive(:see_board)
+      allow(TicTacToe::UserInterface).to receive(:see_board)
     end
 
     it 'returns Tie if the state of the game is TIED ' do

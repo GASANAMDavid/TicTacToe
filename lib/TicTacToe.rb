@@ -12,4 +12,5 @@ require_relative '../config/env_variables'
 require_relative './game_config/game_interface'
 require_relative './game_config/game_set_up'
 require_relative './web_engine'
+require_relative './opponent_type'
 

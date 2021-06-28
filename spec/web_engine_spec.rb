@@ -2,8 +2,8 @@ require_relative '../lib/web_engine'
 
 RSpec.describe TicTacToe::WebEngine do
   let(:board) { [['X', '-', '-'], ['-', '-', '-'], ['-', '-', '-']] }
-  let(:opponent_player) { double('Random Computer', symbol: 'O', make_move: 9) }
-  let(:web_engine) { TicTacToe::WebEngine.new(board, opponent_player) }
+  let(:opponent_player) { double('RandomComputer', name: 'Random Computer', symbol: 'O', make_move: 9) }
+  let(:web_engine) { TicTacToe::WebEngine.new(board, 'David', opponent_player) }
   it 'creates a board with assigned values' do
     expect(web_engine.board).to eq(board)
   end
@@ -32,7 +32,7 @@ RSpec.describe TicTacToe::WebEngine do
   end
 
   describe '#game_status' do
-    it 'return ongoing if game is not finished' do
+    it 'return nil if game is not finished' do
       expect(web_engine.check_status('X')).to eq(nil)
     end
   end

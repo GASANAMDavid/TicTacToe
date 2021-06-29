@@ -1,4 +1,4 @@
-require_relative '../lib/web_engine'
+require_relative '../lib/tic_tac_toe/web_engine'
 
 RSpec.describe TicTacToe::WebEngine do
   let(:board) { [['X', '-', '-'], ['-', '-', '-'], ['-', '-', '-']] }

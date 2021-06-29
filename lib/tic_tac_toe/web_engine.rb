@@ -1,6 +1,6 @@
-require_relative 'game_config/game_interface'
-require_relative 'board'
-require_relative 'game_status'
+require_relative '../game_config/game_interface'
+require_relative '../board'
+require_relative '../game_status'
 module TicTacToe
   class WebEngine
     attr_reader :board

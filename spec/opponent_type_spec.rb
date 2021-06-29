@@ -1,4 +1,4 @@
-require_relative '../lib/opponent_type'
+require_relative '../lib/tic_tac_toe/opponent_type'
 
 RSpec.describe TicTacToe::OpponentType do
   describe '#make_opponent' do

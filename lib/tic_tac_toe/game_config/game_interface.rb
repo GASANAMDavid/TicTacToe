@@ -1,4 +1,4 @@
-require_relative '../../config//env_variables'
+require_relative '../../../config//env_variables'
 module TicTacToe
 module GameInterface
   class << self; attr_accessor :output, :input end

@@ -1,4 +1,4 @@
-require_relative '../lib/board'
+require_relative '../lib/tic_tac_toe/board'
 require 'stringio'
 
 RSpec.describe TicTacToe::Board do

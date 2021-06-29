@@ -1,18 +1,18 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../config/set_languages'
-require_relative '../config/game_interface'
-require_relative '../config/game_set_up'
+require_relative '../lib/tic_tac_toe/game_config/set_languages'
+require_relative '../lib/tic_tac_toe/game_config/game_interface'
+require_relative '../lib/tic_tac_toe/game_config/game_set_up'
 require_relative '../config/env_variables'
 languages = %w[en fr]
-choice = GameInterface.display_language_options
-SetLanguages.change_language(languages[choice])
-GameInterface.display_instructions
+choice = TicTacToe::GameInterface.display_language_options
+TicTacToe::SetLanguages.change_language(languages[choice])
+TicTacToe::GameInterface.display_instructions
 game_on = true
 while game_on
-  choice = GameInterface.choose_mode
-  game = GameSetUp.setup(choice)
+  choice = TicTacToe::GameInterface.choose_mode
+  game = TicTacToe::GameSetUp.setup(choice)
   game.play
   puts I18n.t('prompt_continue_or_exit_game')
   choice = gets.chomp

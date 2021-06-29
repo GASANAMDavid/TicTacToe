@@ -1,5 +1,5 @@
-require_relative '../lib/game_engine'
-require_relative '../lib/user_interface'
+require_relative '../lib/tic_tac_toe/game_engine'
+require_relative '../lib/tic_tac_toe/user_interface'
 require 'stringio'
 
 RSpec.describe TicTacToe::GameEngine do

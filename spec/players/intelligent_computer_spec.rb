@@ -1,5 +1,5 @@
-require_relative '../../lib/players/intelligent_computer'
-require_relative '../../lib/board'
+require_relative '../../lib/tic_tac_toe/players/intelligent_computer'
+require_relative '../../lib/tic_tac_toe/board'
 
 RSpec.describe TicTacToe::IntelligentComputer do
   describe '#make_move' do

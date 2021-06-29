@@ -1,4 +1,4 @@
-require_relative '../../lib/game_config/game_set_up'
+require_relative '../../lib/tic_tac_toe/game_config/game_set_up'
 
 RSpec.describe TicTacToe::GameSetUp do
   describe '.setup' do

@@ -1,4 +1,4 @@
-require_relative '../../lib/game_config/game_interface'
+require_relative '../../lib/tic_tac_toe/game_config/game_interface'
 require 'stringio'
 
 RSpec.describe TicTacToe::GameInterface do

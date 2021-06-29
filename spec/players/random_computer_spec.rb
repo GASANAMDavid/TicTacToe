@@ -1,4 +1,4 @@
-require_relative '../../lib/players/random_computer'
+require_relative '../../lib/tic_tac_toe/players/random_computer'
 
 RSpec.describe TicTacToe::RandomComputer do
   let(:playing_board) { double }

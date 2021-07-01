@@ -2,6 +2,7 @@ require_relative './game_config/game_interface'
 require_relative './board'
 require_relative './game_status'
 require_relative './opponent_type'
+require_relative './validation'
 module TicTacToe
   class WebEngine
     attr_reader :board
@@ -15,7 +16,7 @@ module TicTacToe
     end
 
     def play(symbol, move)
-      TicTacToe::Validation.valid_move(move)
+      TicTacToe::Validation.validate_move(@game_board, move)
       @game_board.apply_move(symbol, move)
       opponent_player_move if @game_board.board_state(symbol).nil?
       @board = @game_board.board

@@ -15,6 +15,7 @@ module TicTacToe
     end
 
     def play(symbol, move)
+      TicTacToe::Validation.valid_move(move)
       @game_board.apply_move(symbol, move)
       opponent_player_move if @game_board.board_state(symbol).nil?
       @board = @game_board.board

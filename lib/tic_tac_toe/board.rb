@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require_relative 'express_board_in_rows'
 module TicTacToe
   class Board
     include BoardAsRows
-    DENOTE_EMPTY = '-'.freeze
+    DENOTE_EMPTY = '-'
     attr_accessor :board, :board_size
 
     def initialize(size)

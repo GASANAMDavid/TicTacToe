@@ -1,21 +1,25 @@
+# frozen_string_literal: true
+
 require_relative './game_config/game_interface'
 require_relative './board'
 require_relative './game_status'
 require_relative './opponent_type'
 require_relative './validation'
 require_relative './game_config/set_languages'
+
 module TicTacToe
   def self.language_translations(lang)
     SetLanguages.change_language(lang)
     {
       playerName: I18n.t('player_name'),
-      boardSize_msg: I18n.t('prompt_board_size'), 
+      boardSize_msg: I18n.t('prompt_board_size'),
       game_mode: I18n.t('game_mode.header'),
       symbol: I18n.t('symbol'),
       select: I18n.t('select'),
       reset: I18n.t('reset'),
       newGame: I18n.t('new_game')
-  }
+
+    }
   end
 
   class WebEngine
@@ -38,12 +42,10 @@ module TicTacToe
 
     def check_status(symbol)
       result = TicTacToe::GameStatus.find(@current_player_name, symbol, @game_board)
-      if result.nil?
-        result = TicTacToe::GameStatus.find(@opponent_player.name, @opponent_player.symbol, @game_board)
-      end
+      result = TicTacToe::GameStatus.find(@opponent_player.name, @opponent_player.symbol, @game_board) if result.nil?
 
       if result.nil?
-          I18n.t('game_status.ongoing')
+        I18n.t('game_status.ongoing')
       else
         result
       end

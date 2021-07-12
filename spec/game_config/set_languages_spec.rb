@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/tic_tac_toe/game_config/set_languages'
 
 RSpec.describe TicTacToe::SetLanguages do

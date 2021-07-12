@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TicTacToe
   module BoardAsRows
     def express_board_as_rows(board)

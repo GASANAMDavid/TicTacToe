@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'player'
 require_relative '../user_interface'
 require_relative '../validation'

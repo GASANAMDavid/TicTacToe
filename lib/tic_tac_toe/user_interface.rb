@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../config/env_variables'
 module TicTacToe
   module UserInterface

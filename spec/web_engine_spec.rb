@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/tic_tac_toe/web_engine'
 
 RSpec.describe TicTacToe::WebEngine do
@@ -46,5 +48,4 @@ RSpec.describe TicTacToe::WebEngine do
       expect(result[:playerName]).to eq('Nom de joueur')
     end
   end
-  
 end

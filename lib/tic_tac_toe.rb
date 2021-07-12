@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './tic_tac_toe/version'
 require_relative './tic_tac_toe/game_config/set_languages'
 require_relative './tic_tac_toe/user_interface'
@@ -13,4 +15,3 @@ require_relative './tic_tac_toe/game_config/game_interface'
 require_relative './tic_tac_toe/game_config/game_set_up'
 require_relative './tic_tac_toe/web_engine'
 require_relative './tic_tac_toe/opponent_type'
-

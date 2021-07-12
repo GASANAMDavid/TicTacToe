@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TicTacToe
   module GameStatus
     def self.find(name, symbol, playing_board)

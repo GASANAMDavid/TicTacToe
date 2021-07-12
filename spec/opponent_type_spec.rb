@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/tic_tac_toe/opponent_type'
 
 RSpec.describe TicTacToe::OpponentType do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../lib/tic_tac_toe/game_config/game_set_up'
 
 RSpec.describe TicTacToe::GameSetUp do

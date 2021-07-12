@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TicTacToe
   class InvalidMove < StandardError; end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './game_config/game_interface'
 require_relative './players/random_computer'
 require_relative 'players/intelligent_computer'

@@ -1,7 +1,9 @@
 fr:
   choose_language_msg: "Choisissez la langue"
-  languages: "0. Anglais\n1. Français"
-  welcome_message: "\t\t\tBienvenue au Jeu de TIC TAC ORTEIL\n"
+  languages:
+    1: "0.  Anglais"
+    2: "1. Français"
+  welcome_message: "Bienvenue au Jeu de TIC TAC ORTEIL"
   instructions:
     header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
     body:
@@ -43,3 +45,13 @@ fr:
   game_status:
     draw: "C'est un tirage"
     win: "%{name} a gagné le match"
+    ongoing: "En cours"
+  
+  player_name: "Nom de joueur"
+  symbol: "Symbole"
+  game_mode_label: "Mode de jeu"
+  board_size: "Taille de la planche"
+  select: "Sélectionner..."
+  player_name_msg: "Entrez le nom du joueur"
+  reset: "Réinitialiser le jeu"
+  new_game: "Nouveau jeu"

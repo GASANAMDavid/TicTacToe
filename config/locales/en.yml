@@ -1,7 +1,9 @@
 en:
   choose_language_msg: "Choose language\n"
-  languages: "0. English\n1. French"
-  welcome_message: "\t\t\tWelcome to TIC TAC TOE Game\n"
+  languages:
+    1: "0.  English"
+    2: "1. French"
+  welcome_message: "Welcome to TIC TAC TOE Game"
   instructions:
     header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
     body:
@@ -43,3 +45,13 @@ en:
   game_status:
     draw: "It's a Draw"
     win: "%{name} won the game"
+    ongoing: "Ongoing"
+
+  player_name: "Player name"
+  symbol: "Symbol"
+  game_mode_label: "Game mode"
+  board_size: "Board size"
+  select: "Select..."
+  player_name_msg: "Enter player name"
+  reset: "Game Reset"
+  new_game: "New game"

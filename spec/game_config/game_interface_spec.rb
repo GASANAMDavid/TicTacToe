@@ -11,12 +11,12 @@ RSpec.describe TicTacToe::GameInterface do
 
   it 'displays languages to the output stream and return user choice' do
     expect(subject.display_language_options).to eq(1)
-    expect(output.string).to include("#{I18n.t('choose_language_msg')}#{I18n.t('languages')}")
+    expect(output.string).to include("#{I18n.t('choose_language_msg')}\n#{I18n.t('languages.1')}\n#{I18n.t('languages.2')}")
   end
 
   it 'displays instructions to the output stream' do
     subject.display_instructions
-    expect(output.string).to include("#{I18n.t('welcome_message')}#{I18n.t('instructions.header')}")
+    expect(output.string).to include("\t\t\t#{I18n.t('welcome_message')}\n\n\n\n\t#{I18n.t('instructions.header')}")
   end
 
   it 'displays given error message to the output stream' do
@@ -26,7 +26,9 @@ RSpec.describe TicTacToe::GameInterface do
   end
 
   it 'displays different game modes a user can pick from and return user mode choice' do
+    # I18n.default_locale = 'fr'
     expect(subject.choose_mode).to eq(1)
+    puts output.string
     expect(output.string).to include("#{I18n.t('game_mode.header')}#{I18n.t('game_mode.body')}")
   end
 end

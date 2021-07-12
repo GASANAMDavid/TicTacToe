@@ -4,7 +4,7 @@ require_relative '../players/human'
 require_relative '../players/random_computer'
 require_relative '../players/intelligent_computer'
 require_relative '../board'
-# require 'i18n'
+
 module TicTacToe
   module GameSetUp
     def self.setup(choice)

@@ -6,14 +6,14 @@ module GameInterface
   self.input = $stdin
 
   def self.display_language_options
-    output.puts I18n.t('choose_language_msg')
-    output.puts I18n.t('languages')
+    output.puts "#{I18n.t('choose_language_msg')}\n"
+    output.puts "#{I18n.t('languages.1')}\n#{I18n.t('languages.2')}"
     input.gets.chomp.to_i
   end
 
   def self.display_instructions
-    output.puts I18n.t('welcome_message')
-    output.puts I18n.t('instructions.header')
+    output.puts "\t\t\t#{I18n.t('welcome_message')}\n"
+    output.puts "\n\n\n\t#{I18n.t('instructions.header')}"
     output.puts I18n.t('instructions.body')
     output.puts I18n.t('instructions.ending_line')
   end

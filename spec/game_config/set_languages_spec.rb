@@ -13,6 +13,13 @@ RSpec.describe TicTacToe::SetLanguages do
       TicTacToe::SetLanguages.change_language('en')
       expect(I18n.default_locale).to eq :en
     end
+
+    it 'raises Invalid locale if not translations for locale specified' do
+      expect do
+        TicTacToe::SetLanguages.change_language('de')
+      end.to raise_error(TicTacToe::InvalidLocale,
+                         'No translations for `de` found')
+    end
   end
 
   describe '.language_translation' do

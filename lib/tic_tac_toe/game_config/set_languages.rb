@@ -2,11 +2,14 @@
 
 require_relative './game_interface'
 module TicTacToe
+  class InvalidLocale < StandardError; end
+
   module SetLanguages
     def self.change_language(lang = 'en')
       I18n.default_locale = lang
     rescue StandardError => e
       GameInterface.display_error_message(e.message)
+      raise TicTacToe::InvalidLocale, "No translations for `#{lang}` found"
     end
 
     def self.language_translations(lang)

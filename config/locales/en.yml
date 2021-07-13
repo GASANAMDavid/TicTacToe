@@ -38,7 +38,7 @@ en:
     one: "1. %{name}"
     two: "2. %{name}"
 
-  prompt_board_size: "Enter the board size"
+  prompt_board_size: "Enter board size"
   choose_move_msg: "Enter your choice"
   current_player_name: "%{name}'s turn"
   prompt_continue_or_exit_game: "\n\nPress Y to continue| N to exit"
@@ -49,10 +49,11 @@ en:
 
   player_name: "Player name"
   symbol: "Symbol"
+  prompt_symbol: "Enter symbol"
   game_mode_label: "Game mode"
   board_size: "Board size"
   select: "Select..."
-  prompt_player_name: "Enter player name"
+  prompt_player_name: "Enter name"
   reset: "Game Reset"
   new_game: "New game"
   play_game_header: "Play Tic Tac Toe"

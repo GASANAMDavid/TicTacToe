@@ -8,7 +8,6 @@ module TicTacToe
     def self.change_language(lang = 'en')
       I18n.default_locale = lang
     rescue StandardError => e
-      GameInterface.display_error_message(e.message)
       raise TicTacToe::InvalidLocale, "No translations found for `#{lang}`"
     end
 

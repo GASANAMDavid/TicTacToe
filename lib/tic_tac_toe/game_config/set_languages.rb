@@ -23,7 +23,7 @@ module TicTacToe
         newGame: I18n.t('new_game'),
         playGameHeader: I18n.t('play_game_header'),
         promptPlayerName: I18n.t('prompt_player_name'),
-        chooseLanguage: I18n.t('choose_language_msg') }
+        boardSize: I18n.t('board_size')}
     end
   end
 end

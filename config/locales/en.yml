@@ -13,7 +13,7 @@ en:
       \t5. If all 9 squares are full and there is no winner the game is TIED and Over.\n\n"
     ending_line: "\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n\n"
   game_mode:
-    header: "\t\tGame Modes\n\t\t~~~~~~~~~~\n\n"
+    header: "Game Modes"
     body: "\t1. Human Vs Human\n
       \t2. Human Vs Random Computer\n
       \t3. Human Vs Intelligent Computer\n

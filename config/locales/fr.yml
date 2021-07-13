@@ -14,7 +14,7 @@ fr:
       \t5. Si les 9 cases sont pleines et qu'il n'y a pas de gagnant, le jeu est à égalité et terminé.\n\n"
     ending_line: "\t:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n\n\n"
   game_mode:
-    header: "\t\tModes de jeu\n\t\t~~~~~~~~~~\n\n"
+    header: "Modes de jeu"
     body: "\t1. Humain contre Humain\n
       \t2. L'humain contre l'ordinateur aléatoire\n
       \t3. L'humain contre l'ordinateur intelligent\n

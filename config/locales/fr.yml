@@ -49,7 +49,7 @@ fr:
   
   player_name: "Nom de joueur"
   symbol: "Symbole"
-  prompt_symbol: "entrez le symbole" 
+  prompt_symbol: "Entrez le symbole" 
   game_mode_label: "Mode de jeu"
   board_size: "Taille de la planche"
   select: "Sélectionner..."

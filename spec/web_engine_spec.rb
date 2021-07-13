@@ -41,11 +41,4 @@ RSpec.describe TicTacToe::WebEngine do
       expect(web_engine.check_status('X')).to eq('Ongoing')
     end
   end
-
-  describe '.language_translation' do
-    it('returns translations') do
-      result = TicTacToe.language_translations('fr')
-      expect(result[:playerName]).to eq('Nom de joueur')
-    end
-  end
 end

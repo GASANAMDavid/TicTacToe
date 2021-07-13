@@ -55,3 +55,4 @@ fr:
   player_name_msg: "Entrez le nom du joueur"
   reset: "Réinitialiser le jeu"
   new_game: "Nouveau jeu"
+  play_game_header: "Jouer Tic Tac Orteil"

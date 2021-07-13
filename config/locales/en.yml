@@ -55,3 +55,4 @@ en:
   player_name_msg: "Enter player name"
   reset: "Game Reset"
   new_game: "New game"
+  play_game_header: "Play Tic Tac Toe"

@@ -14,4 +14,11 @@ RSpec.describe TicTacToe::SetLanguages do
       expect(I18n.default_locale).to eq :en
     end
   end
+
+  describe '.language_translation' do
+    it('returns translations') do
+      result = TicTacToe::SetLanguages.language_translations('en')
+      expect(result[:playerName]).to eq('Player name')
+    end
+  end
 end

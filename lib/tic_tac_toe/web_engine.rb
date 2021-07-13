@@ -8,20 +8,6 @@ require_relative './validation'
 require_relative './game_config/set_languages'
 
 module TicTacToe
-  def self.language_translations(lang)
-    SetLanguages.change_language(lang)
-    {
-      playerName: I18n.t('player_name'),
-      boardSize_msg: I18n.t('prompt_board_size'),
-      game_mode: I18n.t('game_mode.header'),
-      symbol: I18n.t('symbol'),
-      select: I18n.t('select'),
-      reset: I18n.t('reset'),
-      newGame: I18n.t('new_game')
-
-    }
-  end
-
   class WebEngine
     attr_reader :board
 

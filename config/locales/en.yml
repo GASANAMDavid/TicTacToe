@@ -3,7 +3,7 @@ en:
   languages:
     1: "0.  English"
     2: "1. French"
-  welcome_message: "Welcome to TIC TAC TOE Game"
+  welcome_message: "Welcome to TicTacToe Game"
   instructions:
     header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
     body:

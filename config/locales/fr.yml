@@ -3,7 +3,7 @@ fr:
   languages:
     1: "0.  Anglais"
     2: "1. Français"
-  welcome_message: "Bienvenue au Jeu de TIC TAC ORTEIL"
+  welcome_message: "Bienvenue au Jeu de TicTac Orteil"
   instructions:
     header: "\n\n\n\tInstructions\n\t::::::::::::::::\n\n"
     body:

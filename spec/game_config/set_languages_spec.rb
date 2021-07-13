@@ -18,7 +18,7 @@ RSpec.describe TicTacToe::SetLanguages do
       expect do
         TicTacToe::SetLanguages.change_language('de')
       end.to raise_error(TicTacToe::InvalidLocale,
-                         'No translations for `de` found')
+                         'No translations found for `de`')
     end
   end
 

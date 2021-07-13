@@ -25,7 +25,7 @@ module TicTacToe
     end
 
     def self.choose_mode
-      output.puts "#\n\n{I18n.t('game_mode.header')}\n\t\t~~~~~~~~~~\n\n"
+      output.puts "\t\t#{I18n.t('game_mode.header')}\n\t\t~~~~~~~~~~\n\n"
       output.puts I18n.t('game_mode.body')
       output.puts I18n.t('game_mode.choose_msg')
       input.gets.chomp.to_i

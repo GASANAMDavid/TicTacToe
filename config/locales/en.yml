@@ -52,7 +52,7 @@ en:
   game_mode_label: "Game mode"
   board_size: "Board size"
   select: "Select..."
-  player_name_msg: "Enter player name"
+  prompt_player_name: "Enter player name"
   reset: "Game Reset"
   new_game: "New game"
   play_game_header: "Play Tic Tac Toe"

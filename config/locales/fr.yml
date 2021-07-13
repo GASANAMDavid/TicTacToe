@@ -52,7 +52,7 @@ fr:
   game_mode_label: "Mode de jeu"
   board_size: "Taille de la planche"
   select: "Sélectionner..."
-  player_name_msg: "Entrez le nom du joueur"
+  prompt_player_name: "Entrez le nom du joueur"
   reset: "Réinitialiser le jeu"
   new_game: "Nouveau jeu"
   play_game_header: "Jouer Tic Tac Orteil"

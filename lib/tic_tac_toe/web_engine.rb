@@ -9,7 +9,7 @@ require_relative './game_config/set_languages'
 
 module TicTacToe
   class WebEngine
-    attr_reader :board
+    attr_reader :board, :opponent_player
 
     def initialize(board, current_player_name, game_mode)
       @board = board

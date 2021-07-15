@@ -24,9 +24,7 @@ module TicTacToe
         playGameHeader: I18n.t('play_game_header'),
         promptPlayerName: I18n.t('prompt_player_name'),
         boardSize: I18n.t('board_size'),
-        editGame: I18n.t('edit_game')
-      
-      }
+        editGame: I18n.t('edit_game') }
     end
   end
 end

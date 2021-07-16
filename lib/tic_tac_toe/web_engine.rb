@@ -22,7 +22,7 @@ module TicTacToe
     def play(symbol, move)
       TicTacToe::Validation.validate_move(@game_board, move)
       @game_board.apply_move(symbol, move)
-      opponent_player_move if @game_board.board_state(symbol).nil?
+      opponent_player_move(symbol) if @game_board.board_state(symbol).nil?
       @board = @game_board.board
     end
 
@@ -39,8 +39,8 @@ module TicTacToe
 
     private
 
-    def opponent_player_move
-      move = @opponent_player.make_move(@game_board)
+    def opponent_player_move(current_player_symbol)
+      move = @opponent_player.make_move(@game_board, current_player_symbol)
       @game_board.apply_move(@opponent_player.symbol, move)
     end
   end

@@ -29,7 +29,6 @@ RSpec.describe TicTacToe::GameInterface do
 
   it 'displays different game modes a user can pick from and return user mode choice' do
     expect(subject.choose_mode).to eq(1)
-    puts output.string
     expect(output.string).to include("\t\t#{I18n.t('game_mode.header')}\n\t\t~~~~~~~~~~\n\n#{I18n.t('game_mode.body')}")
   end
 end

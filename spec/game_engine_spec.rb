@@ -6,8 +6,8 @@ require 'stringio'
 
 RSpec.describe TicTacToe::GameEngine do
   let(:board) { double('board', board: [['-']]) }
-  let(:player1) { double('player') }
-  let(:player2) { double('player') }
+  let(:player1) { double('player1', symbol: 'X') }
+  let(:player2) { double('player2', symbol: 'O') }
   let(:output) { StringIO.new }
   let(:subject) { TicTacToe::GameEngine.new(board, player1, player2) { include TicTacToe::UserInterface } }
 
@@ -15,8 +15,9 @@ RSpec.describe TicTacToe::GameEngine do
     before do
       TicTacToe::UserInterface.output = output
       allow(player1).to receive(:name).and_return("N'Golo").at_most(4).times
-      allow(player1).to receive(:make_move).with(board).and_return(1, 4)
-      allow(player1).to receive(:symbol).and_return('X').at_most(4).times
+      allow(player1).to receive(:make_move).with(board, 'O').and_return(1, 4)
+      allow(player1).to receive(:make_move).with(board, 'O').and_return(1, 4)
+      allow(player2).to receive(:make_move).with(board, 'X').and_return(1, 4)
       allow(board).to receive(:apply_move).with('X', 1)
       allow(TicTacToe::UserInterface).to receive(:see_board)
     end
@@ -36,9 +37,8 @@ RSpec.describe TicTacToe::GameEngine do
       before do
         allow(board).to receive(:board_state).with('X').and_return(nil).at_most(3).times
         allow(player2).to receive(:name).and_return('Kante').at_most(4).times
-        allow(player2).to receive(:make_move).with(board).and_return(2, 9)
-        allow(player2).to receive(:symbol).and_return('O').at_most(4).times
-        allow(board).to receive(:apply_move).with('O', 2)
+        allow(player2).to receive(:make_move).with(board, 'X').and_return(1, 9)
+        allow(board).to receive(:apply_move).with('O', 1)
       end
       context 'loop 2 times' do
         it 'allows players to take turns when the game is not finished' do

@@ -17,10 +17,11 @@ module TicTacToe
 
     def play
       current_player = first_player
+      opponent_player = second_player
       game_on = true
       while game_on
         UserInterface.display_which_player_turn(current_player)
-        move = current_player.make_move(playing_board)
+        move = current_player.make_move(playing_board, opponent_player.symbol)
         next unless move
 
         playing_board.apply_move(current_player.symbol, move)
@@ -34,14 +35,16 @@ module TicTacToe
           game_on = false
         end
 
-        current_player = switch_players(current_player)
+        current_player, opponent_player = switch_players(current_player)
       end
     end
 
     private
 
     def switch_players(current_player)
-      current_player == first_player ? second_player : first_player
+      opponent_player = current_player
+      current_player = current_player == first_player ? second_player : first_player
+      [current_player, opponent_player]
     end
   end
 end

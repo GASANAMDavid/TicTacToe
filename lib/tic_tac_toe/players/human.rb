@@ -6,7 +6,7 @@ require_relative '../validation'
 
 module TicTacToe
   class Human < Player
-    def make_move(playing_board)
+    def make_move(playing_board, _opponent_player_symbol = '')
       TicTacToe::UserInterface.see_board(playing_board.board)
       move = TicTacToe::UserInterface.prompt_player_for_move
       move if TicTacToe::Validation.validate_move(playing_board, move)

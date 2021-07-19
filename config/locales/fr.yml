@@ -59,3 +59,4 @@ fr:
   play_game_header: "Jouer Tic Tac Orteil"
   edit_game: "Éditer le jeu"
   finished_game: "Le jeu est déjà terminé"
+  invalid_move: "Déplacement invalide"

@@ -25,7 +25,8 @@ module TicTacToe
         promptPlayerName: I18n.t('prompt_player_name'),
         boardSize: I18n.t('board_size'),
         editGame: I18n.t('edit_game'),
-        finishedGame: I18n.t('finished_game') }
+        finishedGame: I18n.t('finished_game'),
+        invalidMove: I18n.t('invalid_move')}
     end
   end
 end

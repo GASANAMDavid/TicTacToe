@@ -8,3 +8,5 @@ Metrics/BlockLength:
   Enabled: false
 Gemspec/RequiredRubyVersion:
   Enabled: false
+Metrics/MethodLength:
+  Enabled: false

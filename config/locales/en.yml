@@ -58,3 +58,4 @@ en:
   new_game: "New game"
   play_game_header: "Play Tic Tac Toe"
   edit_game: "Edit game"
+  finished_game: "The game has already finished"

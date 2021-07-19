@@ -47,9 +47,10 @@ RSpec.describe TicTacToe::GameEngine do
           expect(output.string).to include('Kante won the game')
         end
       end
-      context 'loop 4 times' do
+      context 'loop 4 times ' do
         it 'allows players to take turns when the game is not finished' do
           allow(board).to receive(:apply_move).with('X', 4)
+
           allow(board).to receive(:apply_move).with('O', 9)
           allow(board).to receive(:board_state).with('O').and_return(nil, 'Winner')
           subject.play

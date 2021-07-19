@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'i18n', '~> 1.8', '>= 1.8.10'
   spec.add_dependency 'rake', '~>13.0', '>=13.0.3'
   spec.add_dependency 'rspec', '~> 3.4'
-  spec.add_dependency 'rubocop', '~>1.17', '>= 1.17.0'
+  spec.add_dependency 'rubocop', '~>1.18', '>= 1.18.3'
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html

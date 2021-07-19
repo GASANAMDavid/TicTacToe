@@ -22,7 +22,7 @@ module TicTacToe
     def play(symbol, move)
       TicTacToe::Validation.validate_move(@game_board, move)
       @game_board.apply_move(symbol, move)
-      opponent_player_move(symbol) if @game_board.board_state(symbol).nil?
+      next_player_move(symbol) if @game_board.board_state(symbol).nil?
       @board = @game_board.board
     end
 
@@ -31,15 +31,15 @@ module TicTacToe
       result = TicTacToe::GameStatus.find(@opponent_player.name, @opponent_player.symbol, @game_board) if result.nil?
 
       if result.nil?
-        I18n.t('game_status.ongoing')
+        { message: I18n.t('game_status.ongoing'), ongoing: true }
       else
-        result
+        { message: result, ongoing: false }
       end
     end
 
     private
 
-    def opponent_player_move(current_player_symbol)
+    def next_player_move(current_player_symbol)
       move = @opponent_player.make_move(@game_board, current_player_symbol)
       @game_board.apply_move(@opponent_player.symbol, move)
     end

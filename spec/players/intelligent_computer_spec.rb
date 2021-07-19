@@ -3,8 +3,9 @@
 require_relative '../../lib/tic_tac_toe/players/intelligent_computer'
 require_relative '../../lib/tic_tac_toe/board'
 
+OPPONENT_PLAYER_SYMBOL = 'X'
+
 RSpec.describe TicTacToe::IntelligentComputer do
-  OPPONENT_PLAYER_SYMBOL ='X'
   describe '#make_move' do
     let(:subject) { TicTacToe::IntelligentComputer.new('Intelligent Computer', 'O') }
     let(:playing_board) { TicTacToe::Board.new(3) }

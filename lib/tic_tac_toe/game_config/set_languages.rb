@@ -27,10 +27,12 @@ module TicTacToe
         editGame: I18n.t('edit_game'),
         finishedGame: I18n.t('finished_game'),
         invalidMove: I18n.t('invalid_move'),
-        gameModes: {
-          '1': I18n.t('human_v_random'),
-          '2': I18n.t('human_v_intelligent')
-        } }
+        gameModes: [
+          { value: 1, label: I18n.t('human_v_random') },
+          { value: 2, label: I18n.t('human_v_intelligent') }
+        ] }
     end
   end
 end
+
+p TicTacToe::SetLanguages.language_translations('fr')[:gameModes][1]

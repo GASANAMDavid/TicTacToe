@@ -60,3 +60,5 @@ fr:
   edit_game: "Éditer le jeu"
   finished_game: "Le jeu est déjà terminé"
   invalid_move: "Déplacement invalide"
+  human_v_intelligent: "humain V Ordinateur Intelligent"
+  human_v_random: "Humain V Ordinateur Aléatoire"

@@ -60,3 +60,5 @@ en:
   edit_game: "Edit game"
   finished_game: "The game has already finished"
   invalid_move: "Invalid move"
+  human_v_intelligent: "Human V Intelligent Computer"
+  human_v_random: "Human V Random Computer"

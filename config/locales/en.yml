@@ -54,7 +54,7 @@ en:
   board_size: "Board size"
   select: "Select..."
   prompt_player_name: "Enter name"
-  reset: "Game Reset"
+  reset: "Reset board"
   new_game: "New game"
   play_game_header: "Play Tic Tac Toe"
   edit_game: "Edit game"

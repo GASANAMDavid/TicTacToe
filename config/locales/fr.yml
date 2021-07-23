@@ -54,7 +54,7 @@ fr:
   board_size: "Taille de la planche"
   select: "Sélectionner..."
   prompt_player_name: "Entrez le nom"
-  reset: "Réinitialiser le jeu"
+  reset: "Planche de réinitialisation"
   new_game: "Nouveau jeu"
   play_game_header: "Jouer Tic Tac Orteil"
   edit_game: "Éditer le jeu"

@@ -34,5 +34,3 @@ module TicTacToe
     end
   end
 end
-
-p TicTacToe::SetLanguages.language_translations('fr')[:gameModes][1]

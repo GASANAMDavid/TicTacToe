@@ -6,6 +6,8 @@ require 'stringio'
 RSpec.describe TicTacToe::GameInterface do
   let(:output) { StringIO.new }
   let(:input) { StringIO.new("1\n") }
+  let(:first_player) { double('Human', name: 'David') }
+  let(:second_player) { double('Random Computer', name: 'Random Computer') }
   before do
     TicTacToe::GameInterface.output = output
     TicTacToe::GameInterface.input = input
@@ -30,5 +32,14 @@ RSpec.describe TicTacToe::GameInterface do
   it 'displays different game modes a user can pick from and return user mode choice' do
     expect(subject.choose_mode).to eq(1)
     expect(output.string).to include("\t\t#{I18n.t('game_mode.header')}\n\t\t~~~~~~~~~~\n\n#{I18n.t('game_mode.body')}")
+  end
+
+  it 'prompts user to choose who plays first' do
+    expect(subject.choose_who_plays_first(first_player, second_player)).to eq(1)
+  end
+
+  it 'prompts for board size' do
+    TicTacToe::GameInterface.input = StringIO.new("3\n")
+    expect(subject.prompt_board_size).to eq(3)
   end
 end

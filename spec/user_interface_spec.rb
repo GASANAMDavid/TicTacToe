@@ -23,7 +23,7 @@ RSpec.describe TicTacToe::UserInterface do
     expect(output.string).to include('Enter your choice')
   end
 
-  it 'displays player whose next to play ' do
+  it 'displays player who is next to play ' do
     player = double('Player', name: 'Manzi', symbol: 'X')
     TicTacToe::UserInterface.display_which_player_turn(player)
     expect(output.string).to eq("Manzi's turn\n")

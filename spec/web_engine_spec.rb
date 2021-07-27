@@ -40,9 +40,18 @@ RSpec.describe TicTacToe::WebEngine do
   end
 
   describe '#game_status' do
-    it 'return ongoing if game is not finished' do
+    it 'return ongoing if the game is not finished' do
       expect(web_engine.check_status('X')[:message]).to eq('Ongoing')
       expect(web_engine.check_status('X')[:ongoing]).to eq(true)
+    end
+
+    it 'return winner if the game is finished' do
+      web_engine.board[0][1] = 'O'
+      web_engine.board[1][1] = 'X'
+      web_engine.board[0][2] = 'O'
+      web_engine.board[2][2] = 'X'
+      expect(web_engine.check_status('X')[:message]).to eq('David won the game')
+      expect(web_engine.check_status('X')[:ongoing]).to eq(false)
     end
   end
 end

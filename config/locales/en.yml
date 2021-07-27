@@ -62,3 +62,4 @@ en:
   invalid_move: "Invalid move"
   human_v_intelligent: "Human V Intelligent Computer"
   human_v_random: "Human V Random Computer"
+  game_settings: "Game settings"
